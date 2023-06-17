@@ -1,0 +1,51 @@
+{ "text": [
+  {"barros": "Antony: How can I know which vice is more contrary to me?",
+  "simple": "Antony: How do I know what my personal vices are?"},
+  {"barros": "Father: The tree already depicted what the excesses and deficiencies are, and later, when I explain the meanings of the pieces you will play with, I will tell you which of the two extremes is more contrary to virtue.",
+  "simple": "Father: You can look at the tree to see what the excess and deficit of each virtue is, and later on, when I explain the meanings of the game pieces, I will tell you which of the two extremes or vices is worse."},
+  {"barros": "Here, by way of answer, you shall take this rule: a vice is more harmful where there is greater love in following it and greater pain in leaving it.",
+  "simple": "But in general: a vice is more harmful when it is most easy for you to act in that manner and when it is most difficult for you to not act in that manner."},
+  {"barros": "And this is corrected in the same way you would a crooked rod, which is twisted so much and so often towards the opposite side, that it takes on a better nature and artificiality.",
+  "simple": "And the way to work yourself out of vicious behavior is similar to straighetning a crooked rod, in that you twist it so much and so often to the opposite extreme that in the end it ends up somewhere in the middle of the two and looks like a straight rod again."},
+  {"barros": "Thus, to obtain the virtue of fortitude, because weakness, its deficiency, is a greater vice than excess, people touched by this infirmity must lean so much and so often towards boldness, until habit makes them lose the deficiency and remain in the middle of these two extremes, which is virtue.",
+  "simple": "So for example, to excel in the virtue of fortitude: note that weakness is a lack of fortitude and is a greater vice than an excess of fortitude and for this reason people who are fearsome must lean so much and so often towards boldness until the habit makes them lose the lack of fortitude and they remain in the middle of these two extremes and become virtuous."},
+  {"barros": "Antony: When is the best time to do this?",
+  "simple":"Antony: When is the best time to do this?"},
+  {"barros": "Father: In youth, while there is no habit of sinning.",
+  "simple":"Father: When you are young, before sinning becomes a habit."},
+  {"barros": "Catarina: We already have the time; what is the place?",
+  "simple": "Catarina: OK, now we know when to do it, but where is a good place to practice?"},
+  {"barros": "Father: The most suitable place is among the good and virtuous: because their works stimulate us and invite us to do good deeds.",
+  "simple": "Father: The most suitable place is among the good and virtuous: because their examples inspire us and invite us to be virtuous."},
+  {"barros": "Catarina: If there is a time and place, is there a way?",
+  "simple": "Catarina: OK, now we know when and where, but is there a specific approach?"},
+  {"barros": "Father: Yes, safeguarding all the circumstances of prudence; for, as you have seen, virtue deals about things in particular.",
+  "simple": "Father: Yes there is: always being prudent and cautious, because as we have seen, virtues are related a very specific things."}
+],
+"virtues": [
+  {"name":"being virtuous (in general)",
+  "slogans":[
+  "Improve yourself.",
+  "Develop an innate goodness.",
+  "Despise vice as much as you can. Cultivate virtue.",
+  "Perform your duty.",
+  "Safeguard moderation.",
+  "Nothing in excess.",
+  "Get to know yourself.",
+  "Remember that you were born for virtue. Praise virtue.",
+  "Abstain from vices."
+  ]},
+  {"name":"prudence",
+  "slogans":[
+  "Improve yourself.",
+  "Develop an innate goodness.",
+  "Despise vice as much as you can. Cultivate virtue.",
+  "Perform your duty.",
+  "Safeguard moderation.",
+  "Nothing in excess.",
+  "Get to know yourself.",
+  "Remember that you were born for virtue. Praise virtue.",
+  "Abstain from vices."
+  ]}
+]
+}
