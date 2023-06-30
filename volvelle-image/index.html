@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Test</title>
+	<style type="text/css">
+		body
+		{
+			background: #000;
+		}
+
+		#puzzle-canvas-wrapper
+		{
+			height: 6000px;
+			margin: 70px auto 0 auto;
+			width: 800px;
+		}
+	</style>
+</head>
+<body>
+	<div id="puzzle-canvas-wrapper">
+		<canvas id="puzzle-canvas-1" width="800" height="800"></canvas>
+		<canvas id="puzzle-canvas-2" width="800" height="800"></canvas>
+		<canvas id="puzzle-canvas-3" width="800" height="800"></canvas>
+		<canvas id="puzzle-canvas-4" width="800" height="800"></canvas>
+		<div style="background-color:'white'">
+		<label  for="userVolvelle">Upload your own volvelle image (must be centered):</label>
+		<input type="file"
+			 id="userVolvelle" name="userVolvelle"
+			 accept="image/png, image/jpeg">
+			 <!--<button onclick="createUserVolvelle">Submit</button>-->
+		 </div>
+	</div>
+
+	<script type="text/javascript" src="script/puzzle.js"></script>
+</body>
+</html>

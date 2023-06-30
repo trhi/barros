@@ -1,6 +1,6 @@
 /**
  * @namespace Contains all of the core Puzzle classes
- */ 
+ */
 var PUZZLE = {};
 
 /**
@@ -10,7 +10,7 @@ var PUZZLE = {};
  * @param	{Image}			image			Image used within the Puzzle
  * @param	{Number}		numCircles		Number of concentric circles in Puzzle
  */
-PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles) {
+PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles, volvellePercentages) {
 	// Constants
 	var FULL_ROTATION = (Math.PI * 2);
 	var ROTATION_SPEED = 50;
@@ -28,39 +28,76 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles) {
 	// Get image dimensions
 	var imageWidth = image.width;
 	var imageHeight = image.height;
-	
+
 	// Use the smallest possible radius to ensure image fits
 	var maxRadius = Math.min(canvasWidth, canvasHeight, imageWidth, imageHeight)/2;
-		
+	//here we calculate maxRadius, ie. the maximum radius of the circular image,
+	// ie: width/2.
+
 	// Calculate Puzzle Circle dimensions
 	var centerX = canvasWidth/2;
 	var centerY = canvasHeight/2;
-	
+
+	// here we are basically saying, how many volvelles there will be, eg. numCircles = 4,
+	// so radiusDiff = length of radius between them, which in this code is
+	// assumed to **always be equal**.
+	// For our volvelles code, we (may) want this number
+	// to (always?) be different..:
 	var radiusDiff = (maxRadius/numCircles);
-	
+	// so eg. for a maxRadius = 100 and numCircles = 5, radiusDiff will be 20 (that is: 20 pixels per circle)
+
+	//var volvellePercentages = [1, 0.80, 0.66, 0.5, 0.36]; //simoes-words-1.png
+
+	//var volvellePercentages = [1, 0.79, 0.6, 0.42]; //simoes-img-1.png
+
+	//var volvellePercentages = [1, 0.83, 0.66, 0.49]; //simoes-img-2.png
+
+	//var volvellePercentages = [1, 0.58, 0.47]; //TABall-low-1.png
+
+
+	//here we have to be able to give numCircles as an array of values that splits
+	//the image as % of radius from center:
+
+	//THIS is where the central mathematics happens!
+
 	// Create the Puzzle Circles
-	var currRadius = maxRadius;
-	for(var i=0; i<numCircles; i++)
+	var currRadius = maxRadius; // so eg. we start with maxRadius = currRadius = 100:
+	for(var i=0; i<numCircles; i++) // so then we go through i=0 until numCircles = 5:
 	{
 		var rotation = Math.random() * FULL_ROTATION;
-		this.circles[i] = new PUZZLE.PuzzleCircle(centerX, centerY, currRadius, image, rotation);
-		
-		currRadius -= radiusDiff;
+		//this.circles[i] = new PUZZLE.PuzzleCircle(centerX, centerY, currRadius, image, rotation);
+
+		this.circles[i] = new PUZZLE.PuzzleCircle(centerX, centerY, maxRadius*volvellePercentages[i], image, rotation);
+
+
+		// this creates a new PuzzleCircle given the centerX and centerY which are constant,
+		// the image, which is constant, and a randomly generated rotation, which
+		// essentially shifts the image by a specific amount in order to make it
+		// into a puzzle.
+		// what it basically does is that it draws a puzzle circle, largest to smallest,
+		// center to that radius, then pops it into an array by index: the first element
+		// is the largest, the second the second largest, etc.
+
+		//omit this original code that cuts the image up according to equal/uniform portions:
+		//currRadius -= radiusDiff;
 	}
-	
+
 	// Display the Puzzle Circles
 	this.draw();
-	
+
+	// ^^ i guess here it somehow draws the puzzle circles on top of eachother?
+
 	var self = this;
-	
+
 	// Event Handler: On Mouse Down
 	puzzleCanvas.canvas.addEventListener('mousedown', function(event) {
 		var cursorPos = self.puzzleCanvas.getCursorPosition(event);
-		
+
 		// Determine the circle that the User clicked
 		for(var i=self.circles.length - 1; i>=0; i--)
 		{
 			if(self.circles[i].isInside(cursorPos.x, cursorPos.y))
+			//this checks if mouse click happened on top of "me"
 			{
 				self.activeCircle = self.circles[i];
 				self.isDragging = true;
@@ -68,16 +105,16 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles) {
 			}
 		}
 	}, false);
-	
+
 	var lastCursorX = null;
-	
+
 	// Event Handler: On Mouse Up
 	puzzleCanvas.canvas.addEventListener('mouseup', function(event) {
 		// Reset the dragging state
 		self.isDragging = false;
 		lastCursorX = null;
 	}, false);
-	
+
 	// Event Handler: On Mouse Move
 	puzzleCanvas.canvas.addEventListener('mousemove', function(event) {
 		if(!self.isDragging)
@@ -88,14 +125,14 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles) {
 		var cursorPos = self.puzzleCanvas.getCursorPosition(event);
 		var cursorX = cursorPos.x;
 		var cursorY = cursorPos.y;
-		
+
 		// First Mouse Move since Mouse Down, so just the cache cursor position and leave
 		if(lastCursorX == null)
 		{
 			lastCursorX = cursorX;
 			return;
 		}
-		
+
 		// Calculate rotation distance
 		var cursorXDiff = cursorX - lastCursorX;
 		var rotation = -(cursorXDiff/ROTATION_SPEED);
@@ -106,9 +143,9 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles) {
 		{
 			rotation = (FULL_ROTATION) - rotation;
 		}
-		
+
 		self.rotateCircle(self.activeCircle, rotation);
-		
+
 		// Cache the cursor position
 		lastCursorX = cursorX;
 	}, false);
@@ -162,7 +199,7 @@ PUZZLE.PuzzleCircle = function(x, y, radius, image, rotation) {
 PUZZLE.PuzzleCircle.prototype.isInside = function (x, y) {
 	var xDist = this.x - x;
 	var yDist = this.y - y;
-	
+
 	return ((xDist * xDist) + (yDist * yDist)) < (this.radius * this.radius);
 };
 
@@ -210,9 +247,9 @@ PUZZLE.PuzzleCanvas.prototype.getCursorPosition = function(event) {
 PUZZLE.PuzzleCanvas.prototype.clear = function() {
 	var canvasWidth = this.getWidth();
 	var canvasHeight = this.getHeight();
-	
+
 	var context = this.gfxContext;
-	
+
 	context.globalCompositeOperation = 'destination-over';
 	context.clearRect(0, 0, canvasWidth, canvasHeight);
 };
@@ -226,23 +263,23 @@ PUZZLE.PuzzleCanvas.prototype.drawPuzzleCircle = function(puzzleCircle) {
 
 	// Start composition
 	context.save();
-	
+
 	context.globalCompositeOperation = 'source-over';
-	
+
 	// Move canvas to center or Circle to simplify rotation
 	context.translate(puzzleCircle.x, puzzleCircle.y);
 	context.rotate(puzzleCircle.rotation);
-	
+
 	// Draw the circle
 	context.beginPath();
 	context.arc(0, 0, puzzleCircle.radius, 0, Math.PI * 2, false);
 	context.clip();
-	
+
 	// Draw the image
 	context.drawImage(puzzleCircle.image,
 		-(puzzleCircle.image.width/2),
 		-(puzzleCircle.image.height/2));
-	
+
 	// End composition
 	context.restore();
 };
@@ -261,7 +298,7 @@ var UTIL = {};
 UTIL.getCursorPosition = function(event) {
 	var x;
 	var y;
-	
+
 	if (event.pageX || event.pageY)
 	{
 		x = event.pageX;
@@ -274,17 +311,70 @@ UTIL.getCursorPosition = function(event) {
 		y = event.clientY + document.body.scrollTop
 				+ document.documentElement.scrollTop;
 	}
-	
+
 	return { 'x': x, 'y': y };
 };
 
 // Launch the Puzzle when the DOM is ready
 window.addEventListener('load', function () {
-	var puzzleImage = new Image();
-	puzzleImage.onload = function() {
-		var canvas = document.getElementById('puzzle-canvas');
-		var puzzleCanvas = new PUZZLE.PuzzleCanvas(canvas);
-		var puzzle = new PUZZLE.PuzzleController(puzzleCanvas, puzzleImage, 5);
+
+	//img/simoes-words-1.png 5
+	//img/simoes-img-1.png 4
+	//img/simoes-img-2.png 4
+	//img/TABall-low-1.png 3
+
+	//var volvellePercentages = [1, 0.80, 0.66, 0.5, 0.36]; //simoes-words-1.png
+
+	//var volvellePercentages = [1, 0.79, 0.6, 0.42]; //simoes-img-1.png
+
+	//var volvellePercentages = [1, 0.83, 0.66, 0.49]; //simoes-img-2.png
+
+	//var volvellePercentages = [1, 0.58, 0.47]; //TABall-low-1.png
+
+	var puzzleImage1 = new Image();
+	puzzleImage1.onload = function() {
+		var canvas1 = document.getElementById('puzzle-canvas-1');
+		var puzzleCanvas1 = new PUZZLE.PuzzleCanvas(canvas1);
+		var puzzle1 = new PUZZLE.PuzzleController(puzzleCanvas1, puzzleImage1, p1array.length, p1array); //this is the critical variable: numCircles
+
 	};
-	puzzleImage.src = 'image.jpg';
+	var p1array = [1, 0.80, 0.66, 0.5, 0.36];
+	puzzleImage1.src = 'img/simoes-words-1.png';
+
+	//***
+
+	var puzzleImage2 = new Image();
+	puzzleImage2.onload = function() {
+		var canvas2 = document.getElementById('puzzle-canvas-2');
+		var puzzleCanvas2 = new PUZZLE.PuzzleCanvas(canvas2);
+		var puzzle2 = new PUZZLE.PuzzleController(puzzleCanvas2, puzzleImage2, p1array.length, p2array); //this is the critical variable: numCircles
+	};
+	var p2array = [1, 0.79, 0.6, 0.42];
+	puzzleImage2.src = 'img/simoes-img-1.png';
+
+	var puzzleImage3 = new Image();
+	puzzleImage3.onload = function() {
+		var canvas3 = document.getElementById('puzzle-canvas-3');
+		var puzzleCanvas3 = new PUZZLE.PuzzleCanvas(canvas3);
+		var puzzle3 = new PUZZLE.PuzzleController(puzzleCanvas3, puzzleImage3, p3array.length, p3array); //this is the critical variable: numCircles
+	};
+	var p3array = [1, 0.83, 0.66, 0.49];
+	puzzleImage3.src = 'img/simoes-img-2.png';
+
+	var puzzleImage4 = new Image();
+	puzzleImage4.onload = function() {
+		var canvas4 = document.getElementById('puzzle-canvas-4');
+		var puzzleCanvas4 = new PUZZLE.PuzzleCanvas(canvas4);
+		var puzzle4 = new PUZZLE.PuzzleController(puzzleCanvas4, puzzleImage4, p4array.length, p4array); //this is the critical variable: numCircles
+	};
+	var p4array = [1, 0.58, 0.47];
+	puzzleImage4.src = 'img/TABall-low-1.png';
+
+
+
+
+
+
+
+
 }, false);
