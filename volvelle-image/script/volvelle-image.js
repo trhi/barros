@@ -379,7 +379,7 @@ window.addEventListener('load', function () {
 	puzzleImage4.onload = function() {
 		var canvas4 = document.getElementById('puzzle-canvas-1');
 		var puzzleCanvas4 = new PUZZLE.PuzzleCanvas(canvas4);
-		var puzzle4 = new PUZZLE.PuzzleController(puzzleCanvas4, puzzleImage4, p4array.length, p4array); //this is the critical variable: numCircles
+		var puzzle4 = new PUZZLE.PuzzleController(puzzleCanvas4, puzzleImage4, p4array.length, p4array);
 	};
 	var p4array = [1, 0.58, 0.47];
 	puzzleImage4.src = 'img/TABall-low-1.png';
@@ -388,7 +388,7 @@ window.addEventListener('load', function () {
 	puzzleImage1.onload = function() {
 		var canvas1 = document.getElementById('puzzle-canvas-4');
 		var puzzleCanvas1 = new PUZZLE.PuzzleCanvas(canvas1);
-		var puzzle1 = new PUZZLE.PuzzleController(puzzleCanvas1, puzzleImage1, p1array.length, p1array); //this is the critical variable: numCircles
+		var puzzle1 = new PUZZLE.PuzzleController(puzzleCanvas1, puzzleImage1, p1array.length, p1array);
 
 	};
 	var p1array = [1, 0.80, 0.66, 0.5, 0.36];
@@ -400,7 +400,7 @@ window.addEventListener('load', function () {
 	puzzleImage2.onload = function() {
 		var canvas2 = document.getElementById('puzzle-canvas-2');
 		var puzzleCanvas2 = new PUZZLE.PuzzleCanvas(canvas2);
-		var puzzle2 = new PUZZLE.PuzzleController(puzzleCanvas2, puzzleImage2, p1array.length, p2array); //this is the critical variable: numCircles
+		var puzzle2 = new PUZZLE.PuzzleController(puzzleCanvas2, puzzleImage2, p1array.length, p2array);
 	};
 	var p2array = [1, 0.79, 0.6, 0.42];
 	puzzleImage2.src = 'img/simoes-img-1.png';
@@ -409,7 +409,7 @@ window.addEventListener('load', function () {
 	puzzleImage3.onload = function() {
 		var canvas3 = document.getElementById('puzzle-canvas-3');
 		var puzzleCanvas3 = new PUZZLE.PuzzleCanvas(canvas3);
-		var puzzle3 = new PUZZLE.PuzzleController(puzzleCanvas3, puzzleImage3, p3array.length, p3array); //this is the critical variable: numCircles
+		var puzzle3 = new PUZZLE.PuzzleController(puzzleCanvas3, puzzleImage3, p3array.length, p3array);
 	};
 	var p3array = [1, 0.83, 0.66, 0.49];
 	puzzleImage3.src = 'img/simoes-img-2.png';
@@ -418,7 +418,7 @@ window.addEventListener('load', function () {
 	puzzleImage5.onload = function() {
 		var canvas5 = document.getElementById('puzzle-canvas-5');
 		var puzzleCanvas5 = new PUZZLE.PuzzleCanvas(canvas5);
-		var puzzle5 = new PUZZLE.PuzzleController(puzzleCanvas5, puzzleImage5, p5array.length, p5array); //this is the critical variable: numCircles
+		var puzzle5 = new PUZZLE.PuzzleController(puzzleCanvas5, puzzleImage5, p5array.length, p5array);
 	};
 	var p5array = [1, 0.429];
 	puzzleImage5.src = 'img/simoes-img-3.png';
@@ -427,16 +427,46 @@ window.addEventListener('load', function () {
 	puzzleImage6.onload = function() {
 		var canvas6 = document.getElementById('puzzle-canvas-6');
 		var puzzleCanvas6 = new PUZZLE.PuzzleCanvas(canvas6);
-		var puzzle6 = new PUZZLE.PuzzleController(puzzleCanvas6, puzzleImage6, p6array.length, p6array); //this is the critical variable: numCircles
+		var puzzle6 = new PUZZLE.PuzzleController(puzzleCanvas6, puzzleImage6, p6array.length, p6array);
 	};
 	var p6array = [1, 0.629, 0.44];
 	puzzleImage6.src = 'img/simoes-img-4.png';
+
+//new image - 5
+	var puzzleImage66 = new Image();
+	puzzleImage66.onload = function() {
+		var canvas66 = document.getElementById('puzzle-canvas-66');
+		var puzzleCanvas66 = new PUZZLE.PuzzleCanvas(canvas66);
+		var puzzle66 = new PUZZLE.PuzzleController(puzzleCanvas66, puzzleImage66, p66array.length, p66array);
+	};
+	var p66array = [1, 0.629, 0.38];
+	puzzleImage66.src = 'img/simoes-img-5.jpg';
+
+//new image - 6
+	var puzzleImage666 = new Image();
+	puzzleImage666.onload = function() {
+		var canvas666 = document.getElementById('puzzle-canvas-666');
+		var puzzleCanvas666 = new PUZZLE.PuzzleCanvas(canvas666);
+		var puzzle666 = new PUZZLE.PuzzleController(puzzleCanvas666, puzzleImage666, p666array.length, p666array);
+	};
+	var p666array = [1, 0.629, 0.44];
+	puzzleImage666.src = 'img/simoes-img-6.jpg';
+
+//new image - 7
+	var puzzleImage6666 = new Image();
+	puzzleImage6666.onload = function() {
+		var canvas6666 = document.getElementById('puzzle-canvas-6666');
+		var puzzleCanvas6666 = new PUZZLE.PuzzleCanvas(canvas6666);
+		var puzzle6666 = new PUZZLE.PuzzleController(puzzleCanvas6666, puzzleImage6666, p6666array.length, p6666array);
+	};
+	var p6666array = [1, 0.8, 0.629, 0.44];
+	puzzleImage6666.src = 'img/simoes-img-7.jpg';
 
 	var puzzleImage7 = new Image();
 	puzzleImage7.onload = function() {
 		var canvas7 = document.getElementById('puzzle-canvas-7');
 		var puzzleCanvas7 = new PUZZLE.PuzzleCanvas(canvas7);
-		var puzzle7 = new PUZZLE.PuzzleController(puzzleCanvas7, puzzleImage7, p7array.length, p7array); //this is the critical variable: numCircles
+		var puzzle7 = new PUZZLE.PuzzleController(puzzleCanvas7, puzzleImage7, p7array.length, p7array);
 	};
 	var p7array = [1, 0.85, 0.683, 0.525, 0.374];
 	puzzleImage7.src = 'img/simoes-words-2-L.png';
