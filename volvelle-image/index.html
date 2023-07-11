@@ -27,22 +27,42 @@ todo:
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>create a volvelle from an image</title>
-	<style type="text/css">
-		body
-		{
-			background: #000;
-		}
-
-		#puzzle-canvas-wrapper
-		{
-			height: 6000px;
-			margin: 70px auto 0 auto;
-			width: 2000px;
-		}
-	</style>
+	    <link rel="stylesheet" type="text/css" href="css/volvelle-image.css">
 </head>
 <body>
+
+	<p>Welcome to a draft of volvelle-image.js  :-) </p>
+	<p>At the bottom of this page you can upload your own image to turn it into a
+		digital volvelle. Make sure the image is well centered - this ensures that
+		the volvelles are cut equidistant from the center of the image. This will
+		make the volvelles rotate.</p>
+	<p>You can either use the empty A4 volvelle that we
+		provide and upload it directly, OR create your own volvelle - in this case,
+		please modify the parameters in volvelle-image.js on line1:
+		let userVolvelleArray = [1, 0.75, 0.5, 0.23]; these numbers correspond to
+		the position of the volvelles as a percentage of the radius of the volvelle.</p>
+	<p>This code is a work in progress which was developed for
+		<a style="color:white" href="https://ucpages.uc.pt/en/events/overcoming-divides-electronic-literature-and-social-change/workshops/#Session13">
+			a workshop on the
+		work of João de Barros and volvelles for the ELO conference in Coimbra in
+		July 2023</a>. The first volvelle you see is João de Barros' game board for
+		learning about moral vices and virtues. For further information on this project
+	please visit <a style="color:white" href="https://www.historicaltype.eu/hacking">https://www.historicaltype.eu/hacking</a></p>
+	<p>The text- and image-based volvelles that follow are original physical
+		volvelles created by portuguese artist Pedro Simões which this piece of
+		code cuts up into digitally rotating volvelles. We are grateful to Pedro
+		for allowing us to share his work as an example of the amazing artistic
+		results of thinking through the volvelle.</p>
+		<a style="margin-top: 50px;	margin-left: 100px; color:white; font-size: 24px;"
+		href="http://www.behance.net/pedsimthings">Visit Pedro's website here<a>
+	<p>This code (volvelle-image.js) was adapted from the work of Logan Franken (HTML5 Circle puzzle, created in 2011). Visit Franken's project at:
+		<a href="https://github.com/loganfranken/Circle-Puzzle">https://github.com/loganfranken/Circle-Puzzle</a> or Franken's blogpost at:
+		<a href="https://www.loganfranken.com/blog/html5-circle-puzzle">https://www.loganfranken.com/blog/html5-circle-puzzle</a></p>
+	<p>If you want to play with the code, visit this code on the p5.js online editor at:
+		<a href="https://editor.p5js.org/terhi/sketches/Ps48-Vn0k">https://editor.p5js.org/terhi/sketches/Ps48-Vn0k</a></p>
+
 	<div id="puzzle-canvas-wrapper">
 
 		<canvas id="puzzle-canvas-1" width="800" height="800"></canvas>

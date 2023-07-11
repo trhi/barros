@@ -375,9 +375,18 @@ window.addEventListener('load', function () {
 	//var volvellePercentages = [1, 0.83, 0.66, 0.49]; //simoes-img-2.png
 	//var volvellePercentages = [1, 0.58, 0.47]; //TABall-low-1.png
 
+	var puzzleImage4 = new Image();
+	puzzleImage4.onload = function() {
+		var canvas4 = document.getElementById('puzzle-canvas-1');
+		var puzzleCanvas4 = new PUZZLE.PuzzleCanvas(canvas4);
+		var puzzle4 = new PUZZLE.PuzzleController(puzzleCanvas4, puzzleImage4, p4array.length, p4array); //this is the critical variable: numCircles
+	};
+	var p4array = [1, 0.58, 0.47];
+	puzzleImage4.src = 'img/TABall-low-1.png';
+
 	var puzzleImage1 = new Image();
 	puzzleImage1.onload = function() {
-		var canvas1 = document.getElementById('puzzle-canvas-1');
+		var canvas1 = document.getElementById('puzzle-canvas-4');
 		var puzzleCanvas1 = new PUZZLE.PuzzleCanvas(canvas1);
 		var puzzle1 = new PUZZLE.PuzzleController(puzzleCanvas1, puzzleImage1, p1array.length, p1array); //this is the critical variable: numCircles
 
@@ -404,15 +413,6 @@ window.addEventListener('load', function () {
 	};
 	var p3array = [1, 0.83, 0.66, 0.49];
 	puzzleImage3.src = 'img/simoes-img-2.png';
-
-	var puzzleImage4 = new Image();
-	puzzleImage4.onload = function() {
-		var canvas4 = document.getElementById('puzzle-canvas-4');
-		var puzzleCanvas4 = new PUZZLE.PuzzleCanvas(canvas4);
-		var puzzle4 = new PUZZLE.PuzzleController(puzzleCanvas4, puzzleImage4, p4array.length, p4array); //this is the critical variable: numCircles
-	};
-	var p4array = [1, 0.58, 0.47];
-	puzzleImage4.src = 'img/TABall-low-1.png';
 
 	var puzzleImage5 = new Image();
 	puzzleImage5.onload = function() {
