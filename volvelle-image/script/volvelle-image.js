@@ -1,3 +1,5 @@
+let userVolvelles = [];
+let userVolvelleArray = [1, 0.75, 0.5, 0.23];
 /**
  * @namespace Contains all of the core Puzzle classes
  */
@@ -45,15 +47,6 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles, volvellePerc
 	// to (always?) be different..:
 	var radiusDiff = (maxRadius/numCircles);
 	// so eg. for a maxRadius = 100 and numCircles = 5, radiusDiff will be 20 (that is: 20 pixels per circle)
-
-	//var volvellePercentages = [1, 0.80, 0.66, 0.5, 0.36]; //simoes-words-1.png
-
-	//var volvellePercentages = [1, 0.79, 0.6, 0.42]; //simoes-img-1.png
-
-	//var volvellePercentages = [1, 0.83, 0.66, 0.49]; //simoes-img-2.png
-
-	//var volvellePercentages = [1, 0.58, 0.47]; //TABall-low-1.png
-
 
 	//here we have to be able to give numCircles as an array of values that splits
 	//the image as % of radius from center:
@@ -316,51 +309,70 @@ UTIL.getCursorPosition = function(event) {
 };
 
 
+//create a scaled down version of the image and then create the volvelle:
 
 // this function allows users to upload their own image (square, centered)
 // to create a digital volvelle that they can move:
-document.getElementById("userVolvelle").addEventListener("change", function(e) {
+document.getElementById("uploadButton").addEventListener("change", function(e) {
 
-  let userVolvelle = new Image();
 
-  // Equivalent to above -> let newImg = document.createElement("img");
+						var img = document.createElement('img');
+            img.src = URL.createObjectURL(e.target.files[0]);
 
-  //userVolvelle.src = e.target.files[0];
-  userVolvelle.src = URL.createObjectURL(e.target.files[0]);
-	var userVolvelleArray = [1, 0.8, 0.6, 0.4, 0.2];
+						img.onload = function() {
 
-		userVolvelle.onload = function() {
+            // Create a canvas element
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
 
-			var x = this.width;
-			var y = this.height;
+            // Set the maximum width to 600 pixels
+            var maxWidth = 600;
 
-			var userCanvas = document.createElement("canvas");
-			userCanvas.width = 800;
-			userCanvas.height = 800;
+            // Calculate the scaled-down dimensions
+            var width = img.width;
+            var height = img.height;
+            if (width > maxWidth) {
+              height *= maxWidth / width;
+              width = maxWidth;
+            }
 
-			document.getElementById("puzzle-canvas-wrapper").appendChild(userCanvas);
+            // Set the canvas dimensions
+            canvas.width = width;
+            canvas.height = height;
 
-			var userCanvas = new PUZZLE.PuzzleCanvas(userCanvas);
-			var userPuzzle = new PUZZLE.PuzzleController(userCanvas, userVolvelle, userVolvelleArray.length, userVolvelleArray); //this is the critical variable: numCircles
-	};
+            // Draw the image on the canvas with scaled dimensions
+            ctx.drawImage(img, 0, 0, width, height);
 
+            // Get the scaled-down image data URL
+            var scaledDataUrl = canvas.toDataURL();
+
+            // Display the scaled-down image on the page
+            var scaledImg = document.createElement('img');
+            scaledImg.src = scaledDataUrl;
+            //document.getElementById('puzzle-canvas-wrapper').appendChild(scaledImg);
+
+						scaledImg.onload = function () {
+
+							let myCanvas = document.createElement("canvas");
+							myCanvas.width = 800;
+							myCanvas.height = 800;
+
+							document.getElementById("puzzle-canvas-wrapper").appendChild(myCanvas);
+
+							let userCanvas = new PUZZLE.PuzzleCanvas(myCanvas);
+							let userPuzzle = new PUZZLE.PuzzleController(userCanvas, scaledImg, userVolvelleArray.length, userVolvelleArray);
+
+						}
+}
 });
 
 
 // Launch the Puzzle when the DOM is ready
 window.addEventListener('load', function () {
 
-	//img/simoes-words-1.png 5
-	//img/simoes-img-1.png 4
-	//img/simoes-img-2.png 4
-	//img/TABall-low-1.png 3
-
 	//var volvellePercentages = [1, 0.80, 0.66, 0.5, 0.36]; //simoes-words-1.png
-
 	//var volvellePercentages = [1, 0.79, 0.6, 0.42]; //simoes-img-1.png
-
 	//var volvellePercentages = [1, 0.83, 0.66, 0.49]; //simoes-img-2.png
-
 	//var volvellePercentages = [1, 0.58, 0.47]; //TABall-low-1.png
 
 	var puzzleImage1 = new Image();
@@ -401,5 +413,32 @@ window.addEventListener('load', function () {
 	};
 	var p4array = [1, 0.58, 0.47];
 	puzzleImage4.src = 'img/TABall-low-1.png';
+
+	var puzzleImage5 = new Image();
+	puzzleImage5.onload = function() {
+		var canvas5 = document.getElementById('puzzle-canvas-5');
+		var puzzleCanvas5 = new PUZZLE.PuzzleCanvas(canvas5);
+		var puzzle5 = new PUZZLE.PuzzleController(puzzleCanvas5, puzzleImage5, p5array.length, p5array); //this is the critical variable: numCircles
+	};
+	var p5array = [1, 0.429];
+	puzzleImage5.src = 'img/simoes-img-3.png';
+
+	var puzzleImage6 = new Image();
+	puzzleImage6.onload = function() {
+		var canvas6 = document.getElementById('puzzle-canvas-6');
+		var puzzleCanvas6 = new PUZZLE.PuzzleCanvas(canvas6);
+		var puzzle6 = new PUZZLE.PuzzleController(puzzleCanvas6, puzzleImage6, p6array.length, p6array); //this is the critical variable: numCircles
+	};
+	var p6array = [1, 0.629, 0.44];
+	puzzleImage6.src = 'img/simoes-img-4.png';
+
+	var puzzleImage7 = new Image();
+	puzzleImage7.onload = function() {
+		var canvas7 = document.getElementById('puzzle-canvas-7');
+		var puzzleCanvas7 = new PUZZLE.PuzzleCanvas(canvas7);
+		var puzzle7 = new PUZZLE.PuzzleController(puzzleCanvas7, puzzleImage7, p7array.length, p7array); //this is the critical variable: numCircles
+	};
+	var p7array = [1, 0.85, 0.683, 0.525, 0.374];
+	puzzleImage7.src = 'img/simoes-words-2-L.png';
 
 }, false);

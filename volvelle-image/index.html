@@ -1,7 +1,33 @@
+<!--
+
+This code is based on code written by Logan Franken. Franken posted this project
+on their blog/site on July 25th 2011. Quote from Franken's README:
+
+"
+Circle-Puzzle
+=============
+
+HTML5 rotating concentric circle puzzle created with the HTML5 canvas element
+
+http://www.loganfranken.com/blog/22/html5-circle-puzzle/
+"
+
+The code was adapted by:
+- allow user to set the percentages at which the volvelles are cut at
+- allow the user to upload their own image to create a volvelles
+
+todo:
+- translate this code into "pure" p5.js
+
+
+-->
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Canvas Test</title>
+	<title>create a volvelle from an image</title>
 	<style type="text/css">
 		body
 		{
@@ -12,25 +38,31 @@
 		{
 			height: 6000px;
 			margin: 70px auto 0 auto;
-			width: 800px;
+			width: 2000px;
 		}
 	</style>
 </head>
 <body>
 	<div id="puzzle-canvas-wrapper">
+
 		<canvas id="puzzle-canvas-1" width="800" height="800"></canvas>
 		<canvas id="puzzle-canvas-2" width="800" height="800"></canvas>
 		<canvas id="puzzle-canvas-3" width="800" height="800"></canvas>
 		<canvas id="puzzle-canvas-4" width="800" height="800"></canvas>
-		<div style="background-color:'white'">
-		<label  for="userVolvelle">Upload your own volvelle image (must be centered):</label>
+		<canvas id="puzzle-canvas-5" width="800" height="800"></canvas>
+		<canvas id="puzzle-canvas-6" width="800" height="800"></canvas>
+		<canvas id="puzzle-canvas-7" width="1800" height="1800"></canvas>
+
+		<div>
+		<label style="color: white" for="uploadButton">Upload your own volvelle image (must be centered):</label>
 		<input type="file"
-			 id="userVolvelle" name="userVolvelle"
+			 id="uploadButton" name="userVolvelle"
 			 accept="image/png, image/jpeg">
 			 <!--<button onclick="createUserVolvelle">Submit</button>-->
 		 </div>
+
 	</div>
 
-	<script type="text/javascript" src="script/puzzle.js"></script>
+	<script type="text/javascript" src="script/volvelle-image.js"></script>
 </body>
 </html>
