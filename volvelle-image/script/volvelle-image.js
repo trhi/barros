@@ -471,4 +471,13 @@ window.addEventListener('load', function () {
 	var p7array = [1, 0.85, 0.683, 0.525, 0.374];
 	puzzleImage7.src = 'img/simoes-words-2-L.png';
 
+	var puzzleImage77 = new Image();
+	puzzleImage77.onload = function() {
+		var canvas77 = document.getElementById('puzzle-canvas-77');
+		var puzzleCanvas77 = new PUZZLE.PuzzleCanvas(canvas77);
+		var puzzle77 = new PUZZLE.PuzzleController(puzzleCanvas77, puzzleImage77, p77array.length, p77array);
+	};
+	var p77array = [1, 0.84, 0.683, 0.525, 0.374];
+	puzzleImage77.src = 'img/simoes-words-3-L.png';
+
 }, false);
