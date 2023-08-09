@@ -1,5 +1,26 @@
 let userVolvelles = [];
 let userVolvelleArray = [1, 0.75, 0.5, 0.23];
+let exampleVolvelles = [
+	["img/TABall-low-1.png", [1, 0.58, 0.47] ],
+	['img/simoes-img-2.png', [1, 0.83, 0.66, 0.49] ],
+	['img/simoes-img-3.png', [1, 0.429] ],
+	['img/simoes-img-4.png', [1, 0.629, 0.44] ],
+	['img/simoes-img-5.jpg', [1, 0.629, 0.38] ],
+	['img/simoes-img-6.jpg', [1, 0.629, 0.44] ],
+	['img/simoes-img-7.jpg', [1, 0.8, 0.629, 0.44] ],
+	['img/simoes-words-2-L.png', [1, 0.85, 0.683, 0.525, 0.374] ],
+	['img/simoes-words-3-L.png', [1, 0.84, 0.683, 0.525, 0.374] ]
+];
+let puzzleDiv = document.getElementById("puzzle-canvas-wrapper");
+
+//add this in order to make it valid p5.js:
+function setup(){};
+
+//we do not necessarily need to be doing anything here,
+//OR we can go through the array of puzzle canvases and call
+//this.draw() on all of them at every draw cycle:
+function draw(){};
+
 /**
  * @namespace Contains all of the core Puzzle classes
  */
@@ -12,7 +33,7 @@ var PUZZLE = {};
  * @param	{Image}			image			Image used within the Puzzle
  * @param	{Number}		numCircles		Number of concentric circles in Puzzle
  */
-PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles, volvellePercentages) {
+PUZZLE.PuzzleController = function(puzzleCanvas, image, volvellePercentages) {
 	// Constants
 	var FULL_ROTATION = (Math.PI * 2);
 	var ROTATION_SPEED = 50;
@@ -22,6 +43,10 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles, volvellePerc
 	this.isDragging = false;
 	this.activeCircle = null;
 	this.circles = [];
+	numCircles = volvellePercentages.length;
+	//numCircles: number of circles is equal to the number of parameters
+	//we pass in the array that defines the cutpoint for the circles (as percentage
+	//of radius)
 
 	// Get canvas dimensions
 	var canvasWidth = puzzleCanvas.getWidth();
@@ -47,6 +72,8 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles, volvellePerc
 	// to (always?) be different..:
 	var radiusDiff = (maxRadius/numCircles);
 	// so eg. for a maxRadius = 100 and numCircles = 5, radiusDiff will be 20 (that is: 20 pixels per circle)
+	//we end up not using this variable radiusDiff, we instead give the "radius difference"
+	//as volvelle percentages
 
 	//here we have to be able to give numCircles as an array of values that splits
 	//the image as % of radius from center:
@@ -57,7 +84,8 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles, volvellePerc
 	var currRadius = maxRadius; // so eg. we start with maxRadius = currRadius = 100:
 	for(var i=0; i<numCircles; i++) // so then we go through i=0 until numCircles = 5:
 	{
-		var rotation = Math.random() * FULL_ROTATION;
+
+		var rotation = random() * FULL_ROTATION; //add a random rotation to the each circle of the image:
 		//this.circles[i] = new PUZZLE.PuzzleCircle(centerX, centerY, currRadius, image, rotation);
 
 		this.circles[i] = new PUZZLE.PuzzleCircle(centerX, centerY, maxRadius*volvellePercentages[i], image, rotation);
@@ -76,14 +104,17 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles, volvellePerc
 	}
 
 	// Display the Puzzle Circles
-	this.draw();
+	this.draw(); //draw the puzzle canvas, which then calls draw puzzle circles.
 
 	// ^^ i guess here it somehow draws the puzzle circles on top of eachother?
 
-	var self = this;
+	var self = this; //why this?
 
 	// Event Handler: On Mouse Down
+	//so when a mousedown event happens on top of the canvas element:
+	//puzzleCanvas.canvas.addEventListener('mousedown', function(event) { //was mousedown
 	puzzleCanvas.canvas.addEventListener('mousedown', function(event) {
+		event.preventDefault();
 		var cursorPos = self.puzzleCanvas.getCursorPosition(event);
 
 		// Determine the circle that the User clicked
@@ -92,7 +123,7 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles, volvellePerc
 			if(self.circles[i].isInside(cursorPos.x, cursorPos.y))
 			//this checks if mouse click happened on top of "me"
 			{
-				self.activeCircle = self.circles[i];
+				self.activeCircle = self.circles[i]; //check which is the activeCircle, ie. which circle was touched -> rotated
 				self.isDragging = true;
 				return;
 			}
@@ -102,14 +133,19 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles, volvellePerc
 	var lastCursorX = null;
 
 	// Event Handler: On Mouse Up
+	//puzzleCanvas.canvas.addEventListener('mouseup', function(event) {
 	puzzleCanvas.canvas.addEventListener('mouseup', function(event) {
+		event.preventDefault();
 		// Reset the dragging state
 		self.isDragging = false;
 		lastCursorX = null;
 	}, false);
 
 	// Event Handler: On Mouse Move
+	//puzzleCanvas.canvas.addEventListener('mousemove', function(event) {
 	puzzleCanvas.canvas.addEventListener('mousemove', function(event) {
+		event.preventDefault();
+
 		if(!self.isDragging)
 		{
 			return;
@@ -142,23 +178,104 @@ PUZZLE.PuzzleController = function(puzzleCanvas, image, numCircles, volvellePerc
 		// Cache the cursor position
 		lastCursorX = cursorX;
 	}, false);
+
+
+
+
+
+// Event Handler: On Mouse Down
+//so when a mousedown event happens on top of the canvas element:
+//puzzleCanvas.canvas.addEventListener('mousedown', function(event) { //was mousedown
+puzzleCanvas.canvas.addEventListener('touchstart', function(event) {
+	event.preventDefault();
+	var cursorPos = self.puzzleCanvas.getCursorPosition(event);
+
+	// Determine the circle that the User clicked
+	for(var i=self.circles.length - 1; i>=0; i--)
+	{
+		if(self.circles[i].isInside(cursorPos.x, cursorPos.y))
+		//this checks if mouse click happened on top of "me"
+		{
+			self.activeCircle = self.circles[i]; //check which is the activeCircle, ie. which circle was touched -> rotated
+			self.isDragging = true;
+			return;
+		}
+	}
+}, false);
+
+var lastCursorX = null;
+
+// Event Handler: On Mouse Up
+//puzzleCanvas.canvas.addEventListener('mouseup', function(event) {
+puzzleCanvas.canvas.addEventListener('touchend', function(event) {
+	event.preventDefault();
+	// Reset the dragging state
+	self.isDragging = false;
+	lastCursorX = null;
+}, false);
+
+// Event Handler: On Mouse Move
+//puzzleCanvas.canvas.addEventListener('mousemove', function(event) {
+puzzleCanvas.canvas.addEventListener('touchmove', function(event) {
+	event.preventDefault();
+
+	if(!self.isDragging)
+	{
+		return;
+	}
+
+	var cursorPos = self.puzzleCanvas.getCursorPosition(event);
+	var cursorX = cursorPos.x;
+	var cursorY = cursorPos.y;
+
+	// First Mouse Move since Mouse Down, so just the cache cursor position and leave
+	if(lastCursorX == null)
+	{
+		lastCursorX = cursorX;
+		return;
+	}
+
+	// Calculate rotation distance
+	var cursorXDiff = cursorX - lastCursorX;
+	var rotation = -(cursorXDiff/ROTATION_SPEED);
+
+	// If we're on the upper half of the circle, then we need to do the inverse calculation
+	// of the rotation
+	if(cursorY < self.activeCircle.y)
+	{
+		rotation = (FULL_ROTATION) - rotation;
+	}
+
+	self.rotateCircle(self.activeCircle, rotation);
+
+	// Cache the cursor position
+	lastCursorX = cursorX;
+}, false);
 };
+
+
+
 
 /**
  * Rotates a circle in the Puzzle
  * @param	{PuzzleCircle}	circle		Puzzle circle to rotate
  * @param	{Number}		rotation	Radians of rotation
  */
+
+ //this function rotates just the circle
+ //and then re/draws JUST THAT CIRCLE:
 PUZZLE.PuzzleController.prototype.rotateCircle = function(circle, rotation) {
-	circle.rotation += rotation;
-	this.draw();
+	circle.rotation += rotation; //rotates THAT circle,
+	this.draw(); //and then "draws" the stuff on the canvas again, but JUST that circle:
 };
 
 /**
  * Draws the Puzzle on the canvas
  */
 PUZZLE.PuzzleController.prototype.draw = function() {
-	this.puzzleCanvas.clear();
+	this.puzzleCanvas.clear(); //this is the PUZZLE's own draw() method:
+	//it clears each of the puzzle circles,
+	//and then draws them again:
 
 	for(var i=0; i<this.circles.length; i++)
 	{
@@ -196,6 +313,10 @@ PUZZLE.PuzzleCircle.prototype.isInside = function (x, y) {
 	return ((xDist * xDist) + (yDist * yDist)) < (this.radius * this.radius);
 };
 
+
+//This is saying that the puzzle canvas == the canvas element created:
+//the question is: what is then different about the PuzzleCanvas -
+//what does it add to canvas? if anything?
 /**
  * Creates a new Puzzle Canvas
  * @class	A canvas displaying a Puzzle
@@ -206,6 +327,8 @@ PUZZLE.PuzzleCanvas = function(canvas) {
 	this.gfxContext = canvas.getContext('2d');
 };
 
+
+//these methods essentially just get the height and width of the canvas element:
 /**
  * Returns the width of the canvas
  * @return	{Number}	Width of the canvas
@@ -228,16 +351,17 @@ PUZZLE.PuzzleCanvas.prototype.getHeight = function() {
  * @return	{Object}	User's cursor position as an object map with "x" and "y" properties
  */
 PUZZLE.PuzzleCanvas.prototype.getCursorPosition = function(event) {
-	var cursorPos = UTIL.getCursorPosition(event);
-	cursorPos.x -= this.canvas.offsetLeft;
-	cursorPos.y -= this.canvas.offsetTop;
-	return cursorPos;
+	var cursorPos = UTIL.getCursorPosition(event); //just getting the x and y - but is it relative to the canvas?
+	cursorPos.x -= this.canvas.offsetLeft; //YES!, it is getting the relative cursor position,
+	cursorPos.y -= this.canvas.offsetTop; //because here it adds an offset for the canvas position (left and top)
+	return cursorPos; //in other words: if implemented in p5.js, and there is only one canvas
+	//allowd, then this relative x and y are already processed in mouseX and mouseY.
 };
 
 /**
  * Clears the canvas
  */
-PUZZLE.PuzzleCanvas.prototype.clear = function() {
+PUZZLE.PuzzleCanvas.prototype.clear = function() { //this is also the same as clear() in p5.js
 	var canvasWidth = this.getWidth();
 	var canvasHeight = this.getHeight();
 
@@ -251,8 +375,12 @@ PUZZLE.PuzzleCanvas.prototype.clear = function() {
  * Draws a Puzzle Circle
  * @param	puzzleCircle
  */
+ //this just draws each of the puzzleCircles in order, and adds the rotation
+ //that is attributed to each one of them:
+ //
 PUZZLE.PuzzleCanvas.prototype.drawPuzzleCircle = function(puzzleCircle) {
-	var context = this.gfxContext;
+	var context = this.gfxContext; //this is the own draw() method for the canvas:
+	//for the puzzle circles, which are each drawn separately:
 
 	// Start composition
 	context.save();
@@ -282,6 +410,8 @@ PUZZLE.PuzzleCanvas.prototype.drawPuzzleCircle = function(puzzleCircle) {
  */
 var UTIL = {};
 
+//this function is just asking for cursorPosition, and considering
+//that the user may have scrolled left/right on the body or element, or top/bottom.
 /**
  * Returns the X, Y coordinates of the User's cursor, within the browser window
  * @param	{Event}		event	Mouse event
@@ -309,12 +439,17 @@ UTIL.getCursorPosition = function(event) {
 };
 
 
+/*
+
+MY ADDITIONS BEGIN HERE:
+
+*/
+
 //create a scaled down version of the image and then create the volvelle:
 
 // this function allows users to upload their own image (square, centered)
 // to create a digital volvelle that they can move:
 document.getElementById("uploadButton").addEventListener("change", function(e) {
-
 
 						var img = document.createElement('img');
             img.src = URL.createObjectURL(e.target.files[0]);
@@ -357,127 +492,35 @@ document.getElementById("uploadButton").addEventListener("change", function(e) {
 							myCanvas.width = 800;
 							myCanvas.height = 800;
 
-							document.getElementById("puzzle-canvas-wrapper").appendChild(myCanvas);
-
+							puzzleDiv.appendChild(myCanvas);
 							let userCanvas = new PUZZLE.PuzzleCanvas(myCanvas);
-							let userPuzzle = new PUZZLE.PuzzleController(userCanvas, scaledImg, userVolvelleArray.length, userVolvelleArray);
+							let userPuzzle = new PUZZLE.PuzzleController(userCanvas, scaledImg, userVolvelleArray);
 
 						}
 }
 });
 
 
+//populate page with all the volvelles in the array:
 // Launch the Puzzle when the DOM is ready
 window.addEventListener('load', function () {
 
-	//var volvellePercentages = [1, 0.80, 0.66, 0.5, 0.36]; //simoes-words-1.png
-	//var volvellePercentages = [1, 0.79, 0.6, 0.42]; //simoes-img-1.png
-	//var volvellePercentages = [1, 0.83, 0.66, 0.49]; //simoes-img-2.png
-	//var volvellePercentages = [1, 0.58, 0.47]; //TABall-low-1.png
+	//takes an array of: src and volvelle cutoff array -pairs
+	//and creates new canvas and puzzle canvas for each:
+	for( let i=0; i < exampleVolvelles.length; i++){
 
-	var puzzleImage4 = new Image();
-	puzzleImage4.onload = function() {
-		var canvas4 = document.getElementById('puzzle-canvas-1');
-		var puzzleCanvas4 = new PUZZLE.PuzzleCanvas(canvas4);
-		var puzzle4 = new PUZZLE.PuzzleController(puzzleCanvas4, puzzleImage4, p4array.length, p4array);
-	};
-	var p4array = [1, 0.58, 0.47];
-	puzzleImage4.src = 'img/TABall-low-1.png';
+		let array = exampleVolvelles[i][1];
+		let puzzleImage = new Image();
+		puzzleImage.src = exampleVolvelles[i][0];
 
-	var puzzleImage1 = new Image();
-	puzzleImage1.onload = function() {
-		var canvas1 = document.getElementById('puzzle-canvas-4');
-		var puzzleCanvas1 = new PUZZLE.PuzzleCanvas(canvas1);
-		var puzzle1 = new PUZZLE.PuzzleController(puzzleCanvas1, puzzleImage1, p1array.length, p1array);
-
-	};
-	var p1array = [1, 0.80, 0.66, 0.5, 0.36];
-	puzzleImage1.src = 'img/simoes-words-1.png';
-
-	//***
-
-	var puzzleImage2 = new Image();
-	puzzleImage2.onload = function() {
-		var canvas2 = document.getElementById('puzzle-canvas-2');
-		var puzzleCanvas2 = new PUZZLE.PuzzleCanvas(canvas2);
-		var puzzle2 = new PUZZLE.PuzzleController(puzzleCanvas2, puzzleImage2, p1array.length, p2array);
-	};
-	var p2array = [1, 0.79, 0.6, 0.42];
-	puzzleImage2.src = 'img/simoes-img-1.png';
-
-	var puzzleImage3 = new Image();
-	puzzleImage3.onload = function() {
-		var canvas3 = document.getElementById('puzzle-canvas-3');
-		var puzzleCanvas3 = new PUZZLE.PuzzleCanvas(canvas3);
-		var puzzle3 = new PUZZLE.PuzzleController(puzzleCanvas3, puzzleImage3, p3array.length, p3array);
-	};
-	var p3array = [1, 0.83, 0.66, 0.49];
-	puzzleImage3.src = 'img/simoes-img-2.png';
-
-	var puzzleImage5 = new Image();
-	puzzleImage5.onload = function() {
-		var canvas5 = document.getElementById('puzzle-canvas-5');
-		var puzzleCanvas5 = new PUZZLE.PuzzleCanvas(canvas5);
-		var puzzle5 = new PUZZLE.PuzzleController(puzzleCanvas5, puzzleImage5, p5array.length, p5array);
-	};
-	var p5array = [1, 0.429];
-	puzzleImage5.src = 'img/simoes-img-3.png';
-
-	var puzzleImage6 = new Image();
-	puzzleImage6.onload = function() {
-		var canvas6 = document.getElementById('puzzle-canvas-6');
-		var puzzleCanvas6 = new PUZZLE.PuzzleCanvas(canvas6);
-		var puzzle6 = new PUZZLE.PuzzleController(puzzleCanvas6, puzzleImage6, p6array.length, p6array);
-	};
-	var p6array = [1, 0.629, 0.44];
-	puzzleImage6.src = 'img/simoes-img-4.png';
-
-//new image - 5
-	var puzzleImage66 = new Image();
-	puzzleImage66.onload = function() {
-		var canvas66 = document.getElementById('puzzle-canvas-66');
-		var puzzleCanvas66 = new PUZZLE.PuzzleCanvas(canvas66);
-		var puzzle66 = new PUZZLE.PuzzleController(puzzleCanvas66, puzzleImage66, p66array.length, p66array);
-	};
-	var p66array = [1, 0.629, 0.38];
-	puzzleImage66.src = 'img/simoes-img-5.jpg';
-
-//new image - 6
-	var puzzleImage666 = new Image();
-	puzzleImage666.onload = function() {
-		var canvas666 = document.getElementById('puzzle-canvas-666');
-		var puzzleCanvas666 = new PUZZLE.PuzzleCanvas(canvas666);
-		var puzzle666 = new PUZZLE.PuzzleController(puzzleCanvas666, puzzleImage666, p666array.length, p666array);
-	};
-	var p666array = [1, 0.629, 0.44];
-	puzzleImage666.src = 'img/simoes-img-6.jpg';
-
-//new image - 7
-	var puzzleImage6666 = new Image();
-	puzzleImage6666.onload = function() {
-		var canvas6666 = document.getElementById('puzzle-canvas-6666');
-		var puzzleCanvas6666 = new PUZZLE.PuzzleCanvas(canvas6666);
-		var puzzle6666 = new PUZZLE.PuzzleController(puzzleCanvas6666, puzzleImage6666, p6666array.length, p6666array);
-	};
-	var p6666array = [1, 0.8, 0.629, 0.44];
-	puzzleImage6666.src = 'img/simoes-img-7.jpg';
-
-	var puzzleImage7 = new Image();
-	puzzleImage7.onload = function() {
-		var canvas7 = document.getElementById('puzzle-canvas-7');
-		var puzzleCanvas7 = new PUZZLE.PuzzleCanvas(canvas7);
-		var puzzle7 = new PUZZLE.PuzzleController(puzzleCanvas7, puzzleImage7, p7array.length, p7array);
-	};
-	var p7array = [1, 0.85, 0.683, 0.525, 0.374];
-	puzzleImage7.src = 'img/simoes-words-2-L.png';
-
-	var puzzleImage77 = new Image();
-	puzzleImage77.onload = function() {
-		var canvas77 = document.getElementById('puzzle-canvas-77');
-		var puzzleCanvas77 = new PUZZLE.PuzzleCanvas(canvas77);
-		var puzzle77 = new PUZZLE.PuzzleController(puzzleCanvas77, puzzleImage77, p77array.length, p77array);
-	};
-	var p77array = [1, 0.84, 0.683, 0.525, 0.374];
-	puzzleImage77.src = 'img/simoes-words-3-L.png';
-
+		puzzleImage.onload = function() {
+			let canvas = document.createElement('canvas');
+			canvas.id = "puzzle-canvas-"+i;
+			canvas.width = 800;
+			canvas.height = 800;
+			puzzleDiv.appendChild(canvas);
+			let puzzleCanvas = new PUZZLE.PuzzleCanvas(canvas);
+			let puzzle = new PUZZLE.PuzzleController(puzzleCanvas, puzzleImage, array);
+		};
+	}
 }, false);
