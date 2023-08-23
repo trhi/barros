@@ -1,0 +1,59 @@
+<!--
+
+This code is mostly code written by Logan Franken. Franken posted this project
+on their blog/site on July 25th 2011. Quote from Franken's README:
+
+"
+Circle-Puzzle
+=============
+HTML5 rotating concentric circle puzzle created with the HTML5 canvas element
+https://github.com/loganfranken/Circle-Puzzle
+http://www.loganfranken.com/blog/22/html5-circle-puzzle/
+"
+
+The code was adapted to:
+- use p5.js
+- change variable names: puzzle -> volvelle
+- reorganise code
+- allow the user to upload their own image to create a volvelle
+- allow user to set the percentages at which the volvelles are cut at
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>create a volvelle from an image</title>
+	    <link rel="stylesheet" type="text/css" href="css/volvelle-image.css">
+</head>
+<body>
+
+<div style="max-width: 900px;">
+	<p>⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
+	<p>This code was adapted from Logan Franken's HTML5 Circle puzzle, 2011.
+		<br>Visit Franken's project at:
+		<br><a style="color:white" href="https://github.com/loganfranken/Circle-Puzzle">https://github.com/loganfranken/Circle-Puzzle</a></p>
+	<p>Tweak, copy and modify this code at:
+		<br><a style="color:white" href="https://editor.p5js.org/terhi/sketches/Ps48-Vn0k">https://editor.p5js.org/terhi/sketches/Ps48-Vn0k</a></p>
+		<p>⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
+	<p style="font-size: 37px;">🗑 Note that this page does not save your volvelle 🗑 </p>
+	<label style="color: white; margin-left: 100px; font-size: 24px;" for="uploadButton">
+		Upload your own volvelle (square image, centered): </label>
+		<input type="file"
+		 id="uploadButton" name="userVolvelle"
+		 accept="image/png, image/jpeg">
+
+</div>
+
+	<div id="puzzle-canvas-wrapper">
+		<div>
+
+			 <!--<button onclick="createUserVolvelle">Submit</button>-->
+		 </div>
+	</div>
+
+	<script type="text/javascript" src="lib/p5.min.js"></script>
+	<script type="text/javascript" src="script/volvelle-to-p5js.js"></script>
+</body>
+</html>

@@ -1,16 +1,3 @@
-//this is the code for the simplified p5.js version
-//this code is adapted from code written by Logan Franken ("html5 circle puzzle")
-//Franken's code was "translated" into p5.js for questions of accessibility
-// - allows for displaying one volvelle at a time
-// - allows users to upload their own volvelle,
-// (in which case it replaces whatever was seen previously on the screen (canvas) )
-// - scales whatever image is given to it to 800px x 800px
-// - TODO: allow users to tweak the volvelle percentages!! (even if it is a
-// very rudimentary interface)
-// - TODO: add example images that users can "upload" on the p5 online editor
-// - TODO: cat sized letters to say that your volvelle is not saved on the site!
-
-
 let userVolvelles = [];
 let userVolvelleArray = [1, 0.75, 0.5, 0.23];
 let exampleVolvelles = [
