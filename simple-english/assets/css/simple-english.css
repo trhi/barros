@@ -1,0 +1,44 @@
+.sentencesTitle{
+  font-size: 24px;
+}
+
+.sentences{
+  top: 200px;
+  left: 200px;
+  width: 600px;
+}
+
+.changingText{
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+.buttons{
+  cursor: pointer;
+  position: fixed;
+  top: 45px;
+  right: 130px;
+  font-size: 100px;
+  width: 130px;
+  height: 130px;
+  background-color: white;
+  border: none;
+  color: black;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 992px) {
+
+  .sentencesTitle{
+    font-size: 42px;
+  }
+
+
+  .changingText{
+    font-size: 35px;
+    cursor: pointer;
+    margin-left: 0px;
+  }
+
+}
