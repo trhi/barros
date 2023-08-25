@@ -1,6 +1,6 @@
 .gameboard {
   position: relative;
-  height: 900px;
+  height: 800px;
 }
 
 .boardelements {
@@ -15,35 +15,35 @@
 #rotatebutton {
   cursor: pointer;
   position: absolute;
-  top: 500px;
-  left: 500px;
-  font-size: 70px;
-  width: 40px;
-  height: 40px;
+  top: 150px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
   background-color: transparent;
   border: none;
   color: black;
   border-radius: 50%;
 }
 
-@media screen and (max-width 992px){
-  .boardelements {
-    position: absolute;
-    width: 100%;
-  }
+@media screen and (max-width: 992px){
 
   .gameboard {
     position: relative;
   }
 
+  .boardelements {
+    position: absolute;
+    width: 140%;
+  }
+
   #rotatebutton {
     cursor: pointer;
     position: absolute;
-    top: 0px;
-    left: 0px;
     font-size: 20px;
-    width: 40px;
-    height: 40px;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
     background-color: transparent;
     border: none;
     color: black;
