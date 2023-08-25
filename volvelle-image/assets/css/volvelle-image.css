@@ -12,14 +12,51 @@ body
 }
 
 #uploadButton{
-  width: 200px;
-  height: 50px;
+  width: 700px;
   font-size: 24px;
 }
 
+input::file-selector-button {
+  color: black;
+  padding: 0.5em;
+  border: solid 2px black;
+  border-radius: 50px;
+  background-color: white;
+  cursor: pointer;
+}
+
+
+#uploadButtonInfo{
+  font-size: 24px;
+}
 
 p{
   margin-left: 100px;
   color: black;
   font-size: 24px;
+}
+
+@media screen and (max-width: 992px){
+
+  p{
+    margin-left: 20px;
+    font-size: 30px;
+  }
+
+  #uploadButtonInfo{
+    font-size: 60px;
+  }
+
+  #uploadButton{
+    width: 700px;
+    font-size: 50px;
+  }
+
+  #puzzle-canvas-wrapper
+  {
+    margin: 70px auto 0 auto;
+    width: 1000px;
+    margin-left: 0px;
+  }
+
 }

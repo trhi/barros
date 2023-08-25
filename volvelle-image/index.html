@@ -25,13 +25,13 @@ The code was adapted to:
 <head>
 	<meta charset="UTF-8">
 	<title>create a volvelle from an image</title>
-	    <link rel="stylesheet" type="text/css" href="assets/css/volvelle-image.css">
-			<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="assets/css/volvelle-image.css">
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
 </head>
 <body>
-
 <div style="max-width: 900px;">
-	<p>⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
+	<p style="text-align: center">⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
 	<p>Drag the volvelles to rotate them below,
 		or upload your own image to rotate your own digital volvelle.</p>
 	<p>This code was adapted from Logan Franken's HTML5 Circle puzzle, 2011.
@@ -39,22 +39,14 @@ The code was adapted to:
 		<br><a style="color:white" href="https://github.com/loganfranken/Circle-Puzzle">https://github.com/loganfranken/Circle-Puzzle</a></p>
 	<p>Tweak, copy and modify this code at:
 		<br><a style="color:white" href="https://editor.p5js.org/terhi/sketches/Ps48-Vn0k">https://editor.p5js.org/terhi/sketches/Ps48-Vn0k</a></p>
-		<p>⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
-	<p style="font-size: 37px;">🗑 Note that this page does not save your volvelle 🗑 </p>
-	<label style="color: black; margin-left: 100px; font-size: 24px;" for="uploadButton">
-		Upload your own volvelle (square image, centered): </label>
-		<input type="file"
-		 id="uploadButton" name="userVolvelle"
-		 accept="image/png, image/jpeg">
-
+		<p style="text-align: center">⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
+	<p style="text-align: center; font-size: 37px;">🗑 Note that this page does not save your volvelle 🗑 </p>
+	<p id="uploadButtonInfo">Upload your own volvelle (square image, centered):
+		<input type="file" id="uploadButton" name="userVolvelle" accept="image/png, image/jpeg"></p>
 </div>
-
-	<div id="puzzle-canvas-wrapper">
-		<div>
-		 </div>
+<div id="puzzle-canvas-wrapper">
 	</div>
-
-	<script type="text/javascript" src="assets/lib/p5.min.js"></script>
-	<script type="text/javascript" src="assets/script/volvelle-image.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/lib/p5.min.js"></script>
+	<script language="javascript" type="text/javascript" src="assets/script/volvelle-image.js"></script>
 </body>
 </html>
