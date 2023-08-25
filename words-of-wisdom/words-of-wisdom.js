@@ -96,7 +96,7 @@ function doInterface() {
   $('#score').text(degreeOfWisdom + " / 117");
 
   speakButton = createButton('🗣');
-  speakButton.parent('heartDIV');
+  //speakButton.parent('heartDIV');
   speakButton.style("visibility: visible");
   speakButton.id('speakButton');
   speakButton.mousePressed( () => listenToMyHeart() )
