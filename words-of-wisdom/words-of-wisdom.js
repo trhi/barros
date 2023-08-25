@@ -61,7 +61,7 @@ function preload() {
         listener.onresult = (event) => {
           speakingToMyHeart = event.results[0][0].transcript;
           //display transcript on screen:
-          $("#questions").html('" <em>' + speakingToMyHeart.toLowerCase() + '<em>"');
+          $("#userSpeaks").html('" <em>' + speakingToMyHeart.toLowerCase() + '<em>"');
           if(event.results[0].isFinal){
             //once the user has spoken, see if they spoke one of the wise virtuous sentences:
             didTheySpeakWiseWords(speakingToMyHeart.toLowerCase());
@@ -92,17 +92,8 @@ function doInterface() {
   infoButton = createButton('i');
   infoButton.addClass('infobutton');
 
-  infoButton.mouseOver( () => {
-      if(language == 'fi'){
-        $("#instructions-fi").show();
-      } else if (language == 'en'){
-        $("#instructions-en").show();
-      }
-    })
-  .mouseOut( () => {
-    $('#instructions-fi').hide();
-    $("#instructions-en").hide();
-    });
+  infoButton.mouseOver( () => {$(".instructions").show();})
+  .mouseOut( () => {$('.instructions').hide();});
 
   heartButton = createImg('assets/images/h-ear-t.png');
   heartButton.parent('heartDIV');
@@ -131,17 +122,17 @@ function doInterface() {
 }
 
 function stopAndClear(){
-  $("#questions").css('opacity', '0.3');
+  $("#userSpeaks").css('opacity', '0.3');
   heartButton.attribute('src', 'assets/images/h-ear-t.png')
   listener.stop();
 }
 
 function listenToMyHeart() { //activated once person presses the h-ear-t:
   $("#answers").stop(true, true).empty().hide();
-  $("#questions").show();
-  $("#questions").text('');
-  $("#questions").css('opacity', '1');
-  $("#questions").text('" 🎤  "'); // 🗣️  🎤
+  $("#userSpeaks").show();
+  $("#userSpeaks").text('');
+  $("#userSpeaks").css('opacity', '1');
+  $("#userSpeaks").text('" 🎤  "'); // 🗣️  🎤
   heartButton.attribute('src', 'assets/images/h-ear-t.gif');
   listener.start();
 }
