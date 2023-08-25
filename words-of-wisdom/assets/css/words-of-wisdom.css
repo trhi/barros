@@ -13,13 +13,13 @@
 }
 
 #wisdomSentences{
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
   text-align: center;
 }
 
 #speakButton{
   font-size: 48px;
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
   text-align: center;
   z-index: 1000;
   bottom: 40px;
@@ -54,17 +54,14 @@
   width: 200px;
   left: 80px;
   top: 60px;
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 30px;
   z-index: 10;
 }
 
-body{
-}
-
 #score-box{
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
   font-size: 18px;
   text-align: center;
   position: fixed;
@@ -79,7 +76,7 @@ body{
 
 .instructions{
   position: fixed;
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
   font-size: 16px;
   text-align: center;
   top: 50px;
@@ -96,7 +93,7 @@ body{
 }
 
 .infobutton{
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
   font-size: 18px;
   text-align: center;
   z-index: 1000;
@@ -112,21 +109,11 @@ body{
   background: white;
 }
 
-#prompts{
-  font-size: 40px;
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
-  color: #f6f6f6;
-}
-
 #container{
   position: relative;
   width: window.innerWidth;
   height: window.innerHeight;
 }
-
-
-
-
 
 #heartDIV{
   width: 100%;
@@ -136,77 +123,11 @@ body{
   position:absolute;
 }
 
-
-.h-ear-tButton {
-  width: 60%;
-  border: none;
-  cursor: pointer;
-}
-
-#subtitles-button-info{
-  position: absolute;
-  width: 200px;
-  right: 40px;
-  top: 60px;
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
-  text-align: left;
-  font-size: 18px;
-  z-index: 10;
-}
-
-#finnish-button-info{
-  position: absolute;
-  width: 200px;
-  right: 40px;
-  top: 60px;
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
-  text-align: left;
-  font-size: 18px;
-  z-index: 10;
-}
-
-#select-english{
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  text-align: center;
-  z-index: 1000;
-  top: 40px;
-  right: 40px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50px;
-  position: fixed;
-  cursor: pointer;
-  border: 2px solid #000;
-  border-color: black;
-  background: white;
-}
-
-#answers{
-  position: absolute;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-  width: 400px;
-  max-height: 400px;
-  right: 80px;
-  top: 100px;
-  font-family: "Poppins", Helvetica, Arial, sans-serif;
-  font-size: 30px;
-  text-align: left;
-  font-size: 30px;
-  z-index: 10;
-  background-color: hsla(50, 0%, 85.9%, 0.3);
-  line-height: 0.9;
-
-}
-
 @media screen and (max-width: 992px) {
 
   #speakButton{
     font-size: 100px;
-    font-family: "Poppins", "SF Pro", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Poppins", Times New Roman, "SF Pro", Roboto, Helvetica, Arial, sans-serif;
     text-align: center;
     z-index: 1000;
     bottom: 40px;
@@ -239,11 +160,11 @@ body{
   }
 
   .virtueSentences{
-    font-size: 35px;
+    font-size: 45px;
   }
 
   .infobutton{
-    font-family: "Poppins", "SF Pro", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Poppins", Times New Roman, "SF Pro", Roboto, Helvetica, Arial, sans-serif;
     font-size: 70px;
     text-align: center;
     z-index: 1000;
@@ -261,8 +182,8 @@ body{
 
   .instructions{
     position: fixed;
-    font-family: "Poppins", "SF Pro", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 35px;
+    font-family: "Poppins", Times New Roman, "SF Pro", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 45px;
     text-align: center;
     top: 200px;
     left: 200px;

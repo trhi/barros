@@ -3,11 +3,9 @@ let isSpeechRecognitionSupported = false; //false until proven true
 let phrases, wisdomsDIV, speakButton;
 let degreeOfWisdom = 0, scoreColor;
 
-let canvas, heartButton, speakingToMyHeart, infoButton, finnishButton, englishButton, infinityButton, url, thoughts;
+let canvas, heartButton, speakingWisdom, infoButton, url, thoughts;
 let keywords = [], structure = [];
 let infinity;
-
-//var a = [], i = [], q = [], structures = [];
 
 //continuous + press to speak would be better,
 //but it is only possible on desktop (not on touch screen)
@@ -59,12 +57,12 @@ function preload() {
         listener.continuous = true;//do logic here for if user is on mobile device or not
 
         listener.onresult = (event) => {
-          speakingToMyHeart = event.results[0][0].transcript;
+          speakingWisdom = event.results[0][0].transcript;
           //display transcript on screen:
-          $("#userSpeaks").html('" <em>' + speakingToMyHeart.toLowerCase() + '<em>"');
+          $("#userSpeaks").html('" <em>' + speakingWisdom.toLowerCase() + '<em>"');
           if(event.results[0].isFinal){
             //once the user has spoken, see if they spoke one of the wise virtuous sentences:
-            didTheySpeakWiseWords(speakingToMyHeart.toLowerCase());
+            didTheySpeakWiseWords(speakingWisdom.toLowerCase());
             stopAndClear();
           }
         }
@@ -75,18 +73,13 @@ function setup(){
 
   if (isSpeechRecognitionSupported){
     doInterface();
+  } else {
+    //add a p that says: please use a browser that supports speech recognition
   }
 
 } //close setup
 
 function doInterface() {
-
-  //remove since we are not doing anything with it?
-  //or place behind text and make something interesting happen on it?
-  canvas = createCanvas(0, 0);
-  canvas.style('display', 'block');
-  canvas.id('canvas');
-  background("transparent");
 
   //infoButton to display instructions on how to use the piece:
   infoButton = createButton('i');
@@ -94,15 +87,6 @@ function doInterface() {
 
   infoButton.mouseOver( () => {$(".instructions").show();})
   .mouseOut( () => {$('.instructions').hide();});
-
-  heartButton = createImg('assets/images/h-ear-t.png');
-  heartButton.parent('heartDIV');
-  heartButton.style("visibility: hidden");
-  heartButton.addClass('h-ear-tButton');
-  heartButton.mousePressed( () => listenToMyHeart() )
-  .mouseReleased( () => stopAndClear() )
-  .mouseMoved( () => stopAndClear() )
-  .mouseOut( () => stopAndClear() );
 
   scoreDiv = createDiv();
   scoreDiv.id('score-box');
@@ -123,7 +107,6 @@ function doInterface() {
 
 function stopAndClear(){
   $("#userSpeaks").css('opacity', '0.3');
-  heartButton.attribute('src', 'assets/images/h-ear-t.png')
   listener.stop();
 }
 
@@ -133,7 +116,6 @@ function listenToMyHeart() { //activated once person presses the h-ear-t:
   $("#userSpeaks").text('');
   $("#userSpeaks").css('opacity', '1');
   $("#userSpeaks").text('" 🎤  "'); // 🗣️  🎤
-  heartButton.attribute('src', 'assets/images/h-ear-t.gif');
   listener.start();
 }
 

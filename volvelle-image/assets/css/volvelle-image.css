@@ -38,6 +38,10 @@ p{
 
 @media screen and (max-width: 992px){
 
+  body{
+    overflow-y: hidden;
+  }
+
   p{
     margin-left: 20px;
     font-size: 30px;
