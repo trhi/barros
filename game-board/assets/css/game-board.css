@@ -26,20 +26,6 @@
   border-radius: 50%;
 }
 
-.buttons{
-  cursor: pointer;
-  position: fixed;
-  top: 45px;
-  right: 130px;
-  font-size: 100px;
-  width: 130px;
-  height: 130px;
-  background-color: white;
-  border: none;
-  color: black;
-  border-radius: 50%;
-}
-
 @media screen and (max-width 992px){
   .boardelements {
     position: absolute;

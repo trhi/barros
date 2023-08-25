@@ -10,7 +10,7 @@
 // - TODO: add example images that users can "upload" on the p5 online editor
 // - TODO: cat sized letters to say that your volvelle is not saved on the site!
 
-let volvelleImg = [ "img/TABall-low-1.png", [1, 0.58, 0.47] ];
+let volvelleImg = [ "assets/img/TABall-low-1.png", [1, 0.58, 0.47] ];
 let canvas;
 let userVolvelleArray = [1, 0.75, 0.5, 0.23];
 let puzzleDiv = document.getElementById("puzzle-canvas-wrapper");
