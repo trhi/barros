@@ -49,7 +49,18 @@ p{
 
   #uploadButton{
     width: 700px;
+    height: 30px;
     font-size: 50px;
+  }
+
+  input::file-selector-button {
+    font-size: 50px;
+    color: black;
+    padding: 0.5em;
+    border: solid 2px black;
+    border-radius: 50px;
+    background-color: white;
+    cursor: pointer;
   }
 
   #puzzle-canvas-wrapper
