@@ -1,14 +1,24 @@
+@font-face {
+  font-family: "Enriqueta";
+  src: url("../fonts/Enriqueta-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .sentencesTitle{
+  font-family: "Enriqueta";
   font-size: 24px;
 }
 
 .sentences{
+  font-family: "Enriqueta";
   top: 200px;
   left: 200px;
   width: 600px;
 }
 
 .changingText{
+  font-family: "Enriqueta";
   font-size: 18px;
   cursor: pointer;
   margin-left: 100px;

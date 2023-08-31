@@ -1,13 +1,6 @@
 @font-face {
-  font-family: "Poppins";
-  src: url("../fonts/PoppinsLatin-Medium.otf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Poppins-light-300";
-  src: url("../fonts/poppins-v19-latin-300.woff2");
+  font-family: "Enriqueta";
+  src: url("../fonts/Enriqueta-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -19,13 +12,13 @@
 }
 
 #wisdomSentences{
-  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
+  font-family: "Enriqueta", Times New Roman, Helvetica, Arial, sans-serif;
   text-align: center;
 }
 
 #speakButton{
   font-size: 48px;
-  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
+  font-family: "Enriqueta", Times New Roman, Helvetica, Arial, sans-serif;
   text-align: center;
   z-index: 1000;
   bottom: 40px;
@@ -60,14 +53,14 @@
   width: 200px;
   left: 80px;
   top: 60px;
-  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
+  font-family: "Enriqueta", Times New Roman, Helvetica, Arial, sans-serif;
   text-align: center;
   font-size: 30px;
   z-index: 10;
 }
 
 #score-box{
-  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
+  font-family: "Enriqueta", Times New Roman, Helvetica, Arial, sans-serif;
   font-size: 18px;
   text-align: center;
   position: fixed;
@@ -82,7 +75,7 @@
 
 .instructions{
   position: fixed;
-  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
+  font-family: "Enriqueta", Times New Roman, Helvetica, Arial, sans-serif;
   font-size: 16px;
   text-align: center;
   top: 50px;
@@ -99,7 +92,7 @@
 }
 
 .infobutton{
-  font-family: "Poppins", Times New Roman, Helvetica, Arial, sans-serif;
+  font-family: "Enriqueta", Times New Roman, Helvetica, Arial, sans-serif;
   font-size: 18px;
   text-align: center;
   z-index: 1000;
@@ -139,7 +132,6 @@
 
   #speakButton{
     font-size: 100px;
-    font-family: "Poppins", Times New Roman, "SF Pro", Roboto, Helvetica, Arial, sans-serif;
     text-align: center;
     z-index: 1000;
     bottom: 40px;
@@ -176,7 +168,6 @@
   }
 
   .infobutton{
-    font-family: "Poppins", Times New Roman, "SF Pro", Roboto, Helvetica, Arial, sans-serif;
     font-size: 70px;
     text-align: center;
     z-index: 1000;
@@ -194,13 +185,12 @@
 
   .instructions{
     position: fixed;
-    font-family: "Poppins", Times New Roman, "SF Pro", Roboto, Helvetica, Arial, sans-serif;
     font-size: 45px;
     text-align: center;
     top: 200px;
     left: 200px;
     width: 500px;
-    max-height: 1000px;
+    max-height: 1200px;
     z-index: 1000;
     background-color: #FFF;
     border-radius: 10px;

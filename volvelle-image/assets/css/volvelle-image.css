@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Enriqueta";
+  src: url("../fonts/Enriqueta-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body
 {
   background: pink;
@@ -12,11 +19,13 @@ body
 }
 
 #uploadButton{
+  font-family: "Enriqueta";
   width: 700px;
   font-size: 24px;
 }
 
 input::file-selector-button {
+  font-family: "Enriqueta";
   color: black;
   padding: 0.5em;
   border: solid 2px black;
@@ -31,6 +40,7 @@ input::file-selector-button {
 }
 
 p{
+  font-family: "Enriqueta";
   margin-left: 100px;
   color: black;
   font-size: 24px;

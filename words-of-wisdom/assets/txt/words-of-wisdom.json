@@ -15,7 +15,7 @@
     "abstain from vices"
   ]},
   {"title": "prudence",
-		"src":"assets/img/prudencia-en.png",
+		"src": "assets/img/prudencia-en.png",
 		"sentences": [
 			"choose a prudent guide",
 			"use it like you use your eyes",
@@ -29,7 +29,7 @@
 			"wait for the right opportunity"
 			]},
   {"title": "justice",
-		"src":"assets/img/justica-en.png",
+		"src": "assets/img/justica-en.png",
 		"sentences": [
 			"cultivate justice",
 			"respect the laws",
@@ -43,7 +43,7 @@
 			"do what is fair"
 			]},
   {"title": "fortitude",
-			"src":"assets/img/fortaleza-en.png",
+			"src": "assets/img/fortaleza-en.png",
 		"sentences": [
 			"be strong",
 			"defend your homeland",
@@ -56,7 +56,7 @@
 			"it is mighty to bear with nobility everything that happens"
 			]},
   {"title": "temperance",
-		"src":"assets/img/temperanca-en.png",
+		"src": "assets/img/temperanca-en.png",
 		"sentences": [
 			"repress the seductions of the senses",
 			"eat in moderation",
@@ -67,7 +67,7 @@
 			"practice temperance"
 			]},
   {"title": "liberality",
-		"src":"assets/img/liberalidade-en.png",
+		"src": "assets/img/liberalidade-en.png",
 		"sentences": [
 			"be generous",
 			"have compassion for others",
@@ -83,7 +83,7 @@
 			"god loves a cheerful giver"
 			]},
   {"title": "magnificence",
-		"src":"assets/img/magnificiencia-en.png",
+		"src": "assets/img/magnificiencia-en.png",
 		"sentences": [
 			"establish sacred places",
 			"honor god by building temples",
@@ -91,7 +91,7 @@
 			"do nothing petty"
 			]},
   {"title": "magnanimity",
-		"src":"assets/img/magnanimidade-en.png",
+		"src": "assets/img/magnanimidade-en.png",
 		"sentences": [
 			"focus on eternal goods",
 			"despise the ephemeral",
@@ -106,7 +106,7 @@
 			"do not threaten anyone"
 			]},
   {"title": "modesty",
-		"src":"assets/img/modestia-en.png",
+		"src": "assets/img/modestia-en.png",
 		"sentences": [
 			"be modest when exercising authority",
 			"when exercising magistracy show that you are a man",
@@ -116,7 +116,7 @@
 			"remember the benefits you receive"
 			]},
   {"title": "affability",
-		"src":"assets/img/afabilidade-en.png",
+		"src": "assets/img/afabilidade-en.png",
 		"sentences": [
 			"be friendly",
 			"always happily give your welcomes",
@@ -130,7 +130,7 @@
 			"respond at the right moment"
 			]},
   {"title": "courtesy",
-		"src":"assets/img/graciosidade-en.png",
+		"src": "assets/img/graciosidade-en.png",
 		"sentences": [
 			"live elegantly and courteously",
 			"when tired seek distraction",
@@ -144,7 +144,7 @@
 			"meditate on the mortal condition so that you are never arrogant"
 			]},
   {"title": "meekness",
-			"src":"assets/img/mansidao-en.png",
+			"src": "assets/img/mansidao-en.png",
 		"sentences": [
 			"be gentle",
 			"sustain your wrath",
@@ -156,7 +156,7 @@
 			"moderate irascibility"
 			]},
   {"title": "truth",
-		"src":"assets/img/verdade-en.png",
+		"src": "assets/img/verdade-en.png",
 		"sentences": [
 			"be true to everything you promise",
 			"stick to the truth",
