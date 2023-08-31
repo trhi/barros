@@ -138,11 +138,11 @@ function didTheySpeakWiseWords(whatTheySpoke){
         //console.log("testing for this phrase:", phrases.virtues[i].sentences[j]);
         if ( whatTheySpoke.localeCompare( phrases.virtues[i].sentences[j] ) == 0 ){
           //console.log("there is a match:", whatTheySpoke, "matches this sentece:", phrases.virtues[i].sentences[j] );
-          document.getElementById(phrases.virtues[i].title+[j]).style.color = "pink";
+          document.getElementById(phrases.virtues[i].title+[j]).style.color = "deeppink";
           degreeOfWisdom++;
           scoreColor = degreeOfWisdom/177;
           $('#score').text(degreeOfWisdom + " / 117");
-          $('#score-box').css('background-color',  `rgba(255 192 203 / ${scoreColor})` );
+          $('#score-box').css('background-color',  `rgb(255, 20, 147 / ${scoreColor})` );
           phrases.virtues[i].sentences[j] = "wisdom has spoken";
           //replace sentence with: wisdom has spoken just so that they cannot
           //"play" this sentence again to increase their score

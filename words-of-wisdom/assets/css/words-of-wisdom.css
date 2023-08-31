@@ -34,7 +34,7 @@
 }
 
 #speakButton:active {
-  background: rgba(255 192 203);
+  background: rgb(255, 20, 147);
   color:#FFF;
 }
 
@@ -49,6 +49,7 @@
 }
 
 #userSpeaks{
+  color:  rgb(255, 20, 147);
   position: fixed;
   width: 200px;
   left: 80px;
