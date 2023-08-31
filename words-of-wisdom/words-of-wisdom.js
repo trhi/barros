@@ -21,10 +21,21 @@ function fillPageWithWisdom() {
   wisdomsDIV = document.getElementById("wisdomSentences");
 
   for(let i=0; i<phrases.virtues.length; i++){//the
-    let title = createP(phrases.virtues[i].title);
-    title.id(phrases.virtues[i].title);
-    title.class('title');
-    title.parent(wisdomsDIV);
+
+    if( phrases.virtues[i].src == "" ){
+      let title = createP(phrases.virtues[i].title);
+      title.id(phrases.virtues[i].title);
+      title.class('title');
+      title.parent(wisdomsDIV);
+    } else {
+
+      //add image here:
+      let image = createImg(phrases.virtues[i].src, phrases.virtues[i].title);
+      image.id(phrases.virtues[i].title + "-img");
+      image.class('image');
+      image.parent(wisdomsDIV);
+    }
+
     for(let j=0; j<phrases.virtues[i].sentences.length;j++){
       let p = createP(phrases.virtues[i].sentences[j]);
       p.id(phrases.virtues[i].title+j);
