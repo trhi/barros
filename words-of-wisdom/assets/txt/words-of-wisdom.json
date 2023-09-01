@@ -115,34 +115,6 @@
 			"defend the truth",
 			"remember the benefits you receive"
 			]},
-  {"title": "affability",
-		"src": "assets/img/afabilidade-en.png",
-		"sentences": [
-			"be friendly",
-			"always happily give your welcomes",
-			"do not ridicule anyone",
-			"avoid broken laughter",
-			"be ready to listen",
-			"pleasant for everyone",
-			"listen to those who know best",
-			"say what is useful and pleasant and act in the same manner",
-			"hate the litigation",
-			"respond at the right moment"
-			]},
-  {"title": "courtesy",
-		"src": "assets/img/graciosidade-en.png",
-		"sentences": [
-			"live elegantly and courteously",
-			"when tired seek distraction",
-			"may your banter be decent",
-			"know how to behave",
-			"suit people times and places",
-			"remember that ambition is vain",
-			"and do not refuse an honor if you deserve it but never boast that you deserve it",
-			"do not be carried away by vainglory",
-			"give way to people of greater importance",
-			"meditate on the mortal condition so that you are never arrogant"
-			]},
   {"title": "meekness",
 			"src": "assets/img/mansidao-en.png",
 		"sentences": [
@@ -167,6 +139,34 @@
 			"flee from dancing and gambling",
 			"avoid inappropriate jokes",
 			"hold histrionics and mocking jests in low regard"
-			]}
+			]},
+			{"title": "affability",
+				"src": "assets/img/afabilidade-en.png",
+				"sentences": [
+					"be friendly",
+					"always happily give your welcomes",
+					"do not ridicule anyone",
+					"avoid broken laughter",
+					"be ready to listen",
+					"pleasant for everyone",
+					"listen to those who know best",
+					"say what is useful and pleasant and act in the same manner",
+					"hate the litigation",
+					"respond at the right moment"
+					]},
+		  {"title": "courtesy",
+				"src": "assets/img/graciosidade-en.png",
+				"sentences": [
+					"live elegantly and courteously",
+					"when tired seek distraction",
+					"may your banter be decent",
+					"know how to behave",
+					"suit people times and places",
+					"remember that ambition is vain",
+					"and do not refuse an honor if you deserve it but never boast that you deserve it",
+					"do not be carried away by vainglory",
+					"give way to people of greater importance",
+					"meditate on the mortal condition so that you are never arrogant"
+					]}
 	]
 }

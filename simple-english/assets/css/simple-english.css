@@ -5,17 +5,34 @@
   font-style: normal;
 }
 
-.sentencesTitle{
-  font-family: "Enriqueta";
-  font-size: 24px;
+#tree-of-virtues{
+  height: 100vh;
+}
+
+#tree-div{
+  width: 50%;
+  top: 0px;
+  right: 0px;
+  position: fixed;
+}
+
+#book{
+  width: 50%;
+  float: left;
 }
 
 .sentences{
   font-family: "Enriqueta";
   top: 200px;
   left: 200px;
-  width: 600px;
 }
+
+.sentencesTitle{
+  font-family: "Enriqueta";
+  font-size: 24px;
+}
+
+
 
 .changingText{
   font-family: "Enriqueta";
