@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<title>Hacking the good life</title>
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+<meta charset="UTF-8">
+
+<script language="javascript" type="text/javascript" src="assets/library/jquery-3.5.1.min.js"></script>
+<script language="javascript" type="text/javascript" src="assets/library/p5.min.js"></script>
+<script language="javascript" type="text/javascript" src="assets/library/p5.sound.min.js"></script>
+
+<script language="javascript" type="text/javascript" src="words-of-wisdom.js"></script>
+<link rel="stylesheet" href="assets/css/hacking-index.css">
+
+</head>
+<body>
+
+<img style="width: 90vw; margin-left: 20px; margin-top: 50px;" src="assets/img/Fig0-barros-title.png"></img>
+
+<div style="margin-left: 100px; width: 80vw;">
+  <h2>Introduction</h2>
+  <p>This project is centred on a Portuguese book-game hybrid from 1540. The purpose of the original book-game is to teach adolescents how to live a good life through being virtuous. The book and the game’s theoretical foundation is largely based on Aristotle’s moral theory, but the author adds Christian elements as well. In our project, which we call “Hacking the Good Life”, we study, take apart and re-work João de Barros’ creation, starting from the original material, extending it and playing with it to see where the process leads us. The project is still in progress, and in this edition of The Digital Review, we share the results of our process to date. Read below to try out some of our digital approaches to the game of Moral Virtues!</p>
+
+  <h2>Quick links to our five hacks:</h2>
+
+  <div style="margin-left: 50px;">
+    <p>1. <a href="#booklet">the hacking the good life -booklet PDF</a></p>
+    <p>2. <a href="#game-board">the digital game board</a></p>
+    <p>3. <a href="#simple-english">reading Barros in simplified english*</a></p>
+    <p>4. <a href="#words-of-wisdom">speaking words of wisdom*</a></p>
+    <p>4. <a href="#volvelle">create your own digital volvelle*</a></p>
+  </div>
+
+  <p>You can navigate to our five hacks above (* numbers 3. - 5. are hands on and interactive), or continue reading below for the full project, with context, background and a description of our process.</p>
+
+  <h2>Contextualising João de Barros and the book-game</h2>
+
+  <p>By the middle of the 16th century, João de Barros, in his forties, had published six books in print, edited a few other manuscripts, and ran the empire’s import business for around twenty years. Father of eight, a religious man, Barros was friends with the King but a critic of the court life. In the following decades, he came to write his major literary work, Décadas da Ásia1, granting himself a place in Portuguese Historiography.</p>
+
+  <img style="width: 50vw" src="assets/img/Fig1-barros-portrait.png"></img>
+
+  <p class="caption">Figure 1. Portrait of João de Barros in Manuel de Severim Faria, Discursos Varios Politicos, Évora: Manuel Carvalho, 1624.</p>
+
+  <p>The 1540 book and game2 which we present here was published twice in João de Barros’ lifetime and although it is a remarkable piece, it has been nearly forgotten for almost 500 years. There are very few copies remaining, and only one is complete with the game’s components: it is the second edition, printed in 1563 by João de Barreira and held by the Portuguese National Library3, titled Dialogo de João de Barros com dous filhos seus, sobre preceptos moraes, em modo de jogo.</p>
+
+  <p>The Dialogo is a theory-through-practice exercise that introduces readers and players to Aristotelian Ethics. It is a dialogue between Barros, the father, and two of his sons, António and Catarina, divided into three parts: an introduction to moral theory, including a prologue on the author’s aims and a lengthy review of his diagram of the Tree of Virtues and Vices; an explanation of the game with the boards, spinner and pieces of the game in the form of detachable woodcuts; and the rules to play it.</p>
+
+  <img src="assets/img/Fig2-barros-original-game.png"></img>
+  <p class="caption">Figure 2. The three original rotating boards of the game (and pointer) are meant to be detached and set up to calculate moves and points: they include a large wheel with 12 virtues and 24 vices, a middle wheel for “intentions and remissions” with 24 degrees and a smaller wheel for the 12 passions divided into good and bad passions.</p>
+
+  <h2>Our approach towards and process with Barros’ book-game</h2>
+
+  <p>In 2018, designer-researcher Celeste Pedro started studying Barros’ book, which resulted in an article covering the typographical details of its production4. In the following years, she focused on the game itself and developed a revised digital drawing while noticing inaccuracies in the work that made the game challenging to play. The most relevant inaccuracy was the racing board, described in the text but missing from every copy (to this day, and it is impossible to know whether it ever existed). Another inaccuracy was a clear reference to the two players having different coloured pieces, yet in the book there is only one set of pieces, and they were printed on the recto and verso of the folios, making these unusable if detached. A third example is the spinner, which has two equal endpoints, bringing many questions regarding choice and strategy in the game.</p>
+
+  <p>Once these issues were identified, Celeste and José Higuera (a scholar of Ramon Llull) facilitated a workshop to test the game’s playability5. New questions were raised at that two-day event, and issues were tentatively resolved in the following months – including a new board where pieces could race. Unfortunately, all was put on hold during the pandemic.</p>
+
+  <img src="assets/img/Fig3-barros-game-celeste.png"></img>
+  <p class="caption">Figure 3. The first step in the process: a playable and printable prototype of the game, true to Barros' original instructions, with an added fourth circle, two-colour pieces and a two-colour spinner, designed by Celeste Pedro.</p>
+
+  <p>In 2022, digital media artist-researcher Terhi Marttila gave the study a new impetus, and the “Hacking the Good Life” project was born. If, on the one side, the project is still grounded on historical analyses and research, on the other, it further aims to deconstruct and reinterpret the author’s and the game’s theory through contemporary practices.</p>
+
+  <p>The project’s team has since been expanding with the collaboration of Sandra Simões - a translator specialised in vernacular Portuguese, Luradontsurf - an illustrator, Dr. Luciana Lima - a game-researcher with a psychology background, and Prof. Dr. José Meirinhos6 - a philosopher and medievalist.</p>
+
+  <h2>Barros’ book-game is beautiful BUT</h2>
+
+  <img style="width: 80vw;" src="assets/img/Fig4-barros-tree-LT-EN.png"></img>
+  <p class="caption">Figure 4. The tree of virtues and vices from Barros' book, with virtues and vices in latin and english. This replica of the illustration was digitally hand drawn by tracing over the original woodcut by illustrator @luradontsurf</p>
+
+
+  <p>A good example of the beauty of Barros’ book is the tree of Virtues which is depicted above in Latin (original) on the left and English (translation) on the right. Barros’ engraving of the Tree of Virtues and Vices portrays the Aristotelian virtues and vices from the point of view of the “Doctrine of the Mean”. And that's why, unlike medieval virtue and vice trees, it combines 12 virtues and 24 vices in a single tree. It also positions the soul and the intellectual processes (culminating in free will) at the root of the tree - which was previously reserved for God, at the same time as it places the fruit of the tree (happiness) mediated by the theological virtues that Man it cannot attain but by Him.</p>
+
+  <p>Many of Dialogo’s philosophical questions still resonate with our everyday concerns, and the relevance of moral ethics is still felt in our societies. Barros’ work is mesmerising for its depth; it is visually intriguing and full of philosophical and moral teachings that continuously question our beliefs, but when one sits down to play it according to Barros’ rules, the game is not fun at all. Rules are multidimensional, and each move implies a complex set of calculations that trip up even a seasoned scholar of this work.</p>
+
+  <p>Playing the game becomes about referring to the text way too often and departs from the author’s original intention of using a didactic artifice to practice for the good life. This is the standing ground from where we started developing digital work-in-progress that allow us to explore the book and game in a practice-based and playful way. Barros’ main contribution was the codification and adaptation of prior philosophical works, and we will continue this lineage by further hacking the game. Below we present the outcomes of our project, to date.</p>
+
+  <h1 id="booklet">.1. The Hacking the Good Life – booklet</h1>
+
+  <p>The first outcome of “Hacking the Good Life” is a booklet introducing the project and the most relevant concepts taken from the Nicomachean Ethics, including a playable version of the game that can, as the original, be detached, set, and played; together with the rules of the game written in revised, contemporary language.</p>
+  <p><b>Click on the image below to open the booklet PDF:</b></p>
+
+  <a href="assets/pdf/barros-booklet-HGL.pdf" target="_blank"><img style="cursor:pointer;" src="assets/img/Fig6-barros-diagram-game.png"></img></a>
+  <p class="caption">Figure 4. Diagram of the game’s components designed for the booklet. Click on the image above to open our pdf</p>
+
+  <p>In our practice-based approach to studying Barros’ book/game, our starting point is to work, with and through the aspects that we find captivating about the book/game. The following hacks are the aspects that we have been working on to date.</p>
+
+  <h1 id="game-board">.2. The digital game board and simplified rules</h1>
+
+  <p>Because one of the downsides of the original game is its complexity, mainly with respect to the calculation of moves and points, we came up with some tentative, simplified rules for the game that allow two players to race the virtues and vices to the finishing line. To make the game board accessible to a wider audience, and to allow us to explore and use the game board in our research process without having the physical game board at hand, we created a digitally rotating game board for the browser. Besides this, we are juggling other ideas for simpler rules that we will test out in further stages of the project. We are also trying to understand whether a simplification of the rules is possible without losing sight of the game’s philosophical relevance and whether this bears weight on the game’s outreach. </p>
+    <p><b>Click on the image below to open the digital game board in a new tab: </b></p>
+
+  <a href="game-board" target="_blank"><img src="assets/img/Fig7-barros-digital-gameboard.png"></img></a>
+  <p class="caption">Figure 5. Screenshot of the game board. Click on the image above to open the digital game board in a new tab</p>
+
+  <p>You can experiment with playing the game by following these simplified rules. One player is the black pointer, the other the white. “Move” the piece that the pointer selects. Note that we haven’t implemented moving game pieces so you have to keep track of your pieces by taking notes. Players take turns. Keep track of what square your game piece is in (eg. FO, MOLI, IRA, PVSI, MAGs etc.) by jotting down its lettering and the number of the square you end up in (for example: FO square 18). One player moves clockwise, the other counterclockwise.</p>
+
+  <p>1. Open the digital game board in a new tab <a href="game-board" target="_blank">by clicking this link</a></p>
+  <p>2. Press the play button and count to a number between two and six, press pause. 1st movement - Read the outer ring: Move this number of squares forward with the vice or virtue. Example: FO always moves 10 squares for the first movement.</p>
+  <p>3. 2nd movement - For virtues only: Read the ring below the name of the virtue, and move this number of squares forward. Example: FO (b=) 5 is the number below the name, and being a virtue, always moves 5 squares for this second movement.</p>
+  <p>4. 3rd movement - Calculate your degree of intention: 
+  <p>For virtues: subtract the degree of intention (middle ring, numbers 1-24) from the number below the name of the virtue. Example: FO: (b=) 5 is the number below the name and we get eg. 10 on the intention ring so: 10 - 5 = +5 squares to the third movement. </p>
+  <p>For vices: subtract the number on the outer ring from the degree of intention (middle ring, numbers 1-24). Example: MOLI, 11 is the number on the outer ring and we get eg. 10 on the intention ring so: 10 - 11 = -1 square for the third movement. </p>
+  <p>-> Move this number of squares. If the number is negative, move backwards.</p>
+  <h3>Example from the original rules:</h3>
+  <p>The fifth rule of virtues. Every virtue can have three moves, two natural moves and one accidental move: the natural ones correspond to its two numbers, and the virtue shall move such many squares: the upper number, which is their order, first, and then the lower number, which is their natural value. The accidental move will be to move as many squares forward as there are degrees of intention, and so many points it will accumulate from outside, and, if there is remission, it will lose as many. If there is neither intention nor remission, it moves only twice with no other gain7.</p>
+  <p>5. The game ends when one of the players gets all of their virtues to the finishing square. To find out who won the game, count ten points for every virtue that made it past the finishing line and subtract two points for every vice. Whoever has more points wins.</p>
+  <h3>Example from the original rules:</h3>
+  <p>End of game rules. (...) there are three ways to win. One is called intentions, another virtues, and another triumphs. A triumph is worth 2 virtues, and a virtue is worth 36 intentions, done by them and the gains of the game (as we have seen with the rules). When these three kinds of points are added together, the calculation is as follows: the smaller number is taken from the larger number: from intentions, intentions; from virtues, virtues; and from triumphs, triumphs. The player who gathers more points after this subtraction shall be the one taking the prize, because they have gone through life with more merits8.</p>
+
+  <h2>What have we learned?</h2>
+  <p>One of our findings is that to just play this game of racing the pieces to the finishing line (without having access to the philosophical discourse presented in the book) basically just makes it into a racing game like any other. The significance or meaning of the virtues and vices is not conveyed clearly through the game mechanics of the racing game itself.</p>
+  <p>The only thing that we learn is that some pieces will tend to go further faster (because of the higher numbers on the outer ring), but that’s about it. If we read the book component where Barros discusses moral theory, we understand that this is because Barros creates an order of importance for the virtues, arguing that some are of higher value than others because they are harder to attain that others. We also learn that the degree of intention with which we behave affects whether virtuous or vicious behavior takes us forwards or backwards in life. For example, to be vicious with lots of intention (a number like 24) makes us move many squares backwards on the game board (and in life), but that to be virtuous with very little intention (a number like 3) can also make us move backwards. This brings us to our next practice-based approach to Barros’ work.</p>
+
+  <h1 id="simple-english">.3. Reading the original text alongside a simplified English version</h1>
+
+<p>Barros writes in Portuguese, and the game pieces and board are in Latin because Barros wanted to teach Latin. There is no English translation to date so we are soon publishing the first ever English translation of the book/game, translated by Sandra Simões. But another important point is that Barros’ use of language dates to 1540 which makes the text very hard to understand at times. In the process of working on the translation, Sandra, Celeste and Terhi read through the Portuguese text together, and Celeste would often “simplify” the sentences that we struggled to understand.</p>
+
+<p>We found this “translation” between Barros’ original language and a simplified version intriguing so we are working on a contemporary linguistic interpretation of the text in order to make the language easier to understand. We intend to publish the true-to-origin translation alongside our simplified English version in digital format, and you can find a short sneak preview of our approach here. Click on the phrases to toggle between the original and a “simplified” English version.</p>
+<p><b>Click on the image below to open our hack in a new tab:</b></p>
+
+<a href="simple-english" target="_blank"><img src="assets/img/Fig8-barros-simple-english.png"></img></a>
+<p class="caption">Figure 8. Screenshot of Barros english to simple english. Click on the image above to open the project in a new tab</p>
+
+<h2>What have we learned?</h2>
+<p>For us the process of interpreting and simplifying the text has been productive as it allows us to engage deeper with the text. Yet, a lot can go missing when we interpret Barros’ text and try to simplify it, and as we work further on this, we will continue working as a group in order to benefit from the analytical capacity of multiple minds. This is also why we like the idea of keeping the original text a click away from our interpretation, so that the reader can also judge whether the simplification is adequate. The simplification is like an abstract or executive summary that can motivate to study the original text in more detail. Our hypothesis is that the simplified version may also make Barros’ text more accessible to a wider audience.</p>
+
+<h1 id="words-of-wisdom">.4. Speaking words of wisdom to increase your score</h1>
+<p>In the book and game, Barros shares a set of precepts (or rules) that should be followed to reach a virtuous life. As part of the game, players are supposed to speak out loud - in latin - one of the phrases related to the virtue as they move the virtue pieces around the game board. We made a small piece where users can “play” all of these phrases: they will need to speak them out loud (using the browser’s speech recogniser) to win the game! Unfortunately, there is no speech recognition in Latin, so this mini game in English.</p>
+<p><b>Open the minigame in a new tab by clicking the image below:</b></p>
+
+<a href="words-of-wisdom" target="_blank"><img src="assets/img/Fig9-barros-words-of-wisdom.png"></img></a>
+<p class="caption">Figure 9. Screenshot of our words of wisdom game. Click on the image above to open the project in a new tab</p>
+
+<h2>What have we learned?</h2>
+<p>The precepts or phrases related to each virtue allow us to understand what is meant by the different virtues and by their respective vices. For example for the virtue of courtesy: “live elegantly and courteously” is a general description of the virtue of courtesy, but: “may your banter be decent” refers to vice of mockery or mocking behavior and “know how to behave” alludes to the other end of the vice, to be “rustical” or unsophisticated (rusticitas in latin). These descriptions of human behavior shed light on what Barros and other philosophers consider to be the key aspects of each virtue and vice. In this sense, reading the precepts can help in understanding what is meant by the virtues and vices.</p>
+
+<h1 id="volvelle">.5. Draw or create your own volvelle and upload to rotate it</h1>
+
+<p>Barros’ game concept is part of a broader lineage of medieval diagrams known as volvelles, in which concentric rotating circles are used to engage with relational concepts and multifactor data, such as astronomical motions, calendrical calculations or prognostics. In this hack we adapt code we find to allow users to upload their own volvelles to create digitally rotating volvelles.</p>
+
+<p><b>Open the page here on the digital review by clicking the image below and upload your own volvelle to rotate it digitally (click and drag).</b></p>
+
+<a href="volvelle-image" target="_blank"><img src="assets/img/Fig10-barros-volvelle.png"></img></a>
+<p class="caption">Figure 10. Screenshot of our digital volvelle hack. Click on the image above to open the project in a new tab</p>
+
+<p>More specifically, volvelles are defined as “(...) rotating paper or membrane discs, shaped and overlapping and fixed to the page with one or more pins, allowing each disc to be independently rotated around its axis [...] enhancing the semantic value of the text and generating original and unexpected iconic reading spaces” (Crupi 2019, 2). Below you can see some examples of paper volvelles from the medieval and early modern periods.</p>
+
+<img src="assets/img/Fig12-barros-othervolvelles.png"></img>
+<p class="caption">Figure 12. Examples of volvelles from the Medieval and Early Modern periods.</p>
+
+<p>In time for the Electronic Literature Organization conference in the summer of 2023 (ELO2023), we adapted code we found to allow users to upload their own image of a volvelle and to make it rotate digitally on screen. Below we reference the author of the original code, give instructions for making your own volvelle and share two examples created during the workshop, but first, the link to the interface.</p>
+
+<p>Terhi found code from 2011 by Logan Franken called HTML5 circle puzzle (<a href="https://github.com/loganfranken/Circle-Puzzle">https://github.com/loganfranken/Circle-Puzzle</a>). She forked Franken’s code and adapted it so people could upload their own images, and then published it on the p5 online editor so that the code can be viewed, tweaked and modified: <a href="https://editor.p5js.org/terhi/sketches/Ps48-Vn0k">https://editor.p5js.org/terhi/sketches/Ps48-Vn0k</a>. The adapted code scales the image to 800px by 800px. She also “translated” some parts of the code to p5.js to make it more accessible to the creative coding community. To get the volvelles to rotate at the correct positions, you can open the code on the p5 editor and change the percentages for the different rotating parts assigned in the variable userVolvelleArray (by default positioned at = [1, 0.75, 0.5, 0.23] ). </p>
+
+<p>For ELO2023, the team prepared a PDF for drawing/writing your own volvelle (scroll below to download and print it), and asked workshop participants to create their own volvelles (see two examples below). If you want to upload your own volvelle, use your phone's “square” format to photograph the volvelle - it must be 100% centred to rotate well. Or you can tweak the image on your computer to centre it. The page does not save the volvelles, so your volvelle will disappear when you close your browser tab or window.</p>
+
+<img style="width: 80vw;" src="assets/img/Fig13-barros-volvelle-christine-and-terhi.png"></img>
+<p class="caption">Figure 13. Created at ELO2023. Left: a volvelle for generating haikus by workshop participant Christine Chong. Right: a volvelle with line art illustrations of eyebrows, eyes and mouths for generating expressions by Terhi Marttila.</p>
+
+<p>Below you will find a PDF that you can print out, fill and photograph and upload to create your own rotating volvelle.</p>
+
+<a href="assets/pdf/volvelle-image.pdf" target="_blank"><img src="assets/img/Fig11-barros-elo23.png"></img></a>
+<p class="caption">Figure 11. Created for ELO2023. Click on the image above to open the PDF, print it, draw/write on it, photograph it and upload it.</p>
+
+<h2>What have we learned?</h2>
+<p>The volvelle, as a combinatory approach to organising data is fascinating. It can be used to create combinatory poems, like in the example by our ELO workshop participant Christine Chong, or it can be used to create visual art that recombines when we rotate the volvelles, such as in the volvelle by Terhi Marttila to create facial expressions. Using this same code, we are working towards publishing, in digitally rotating form, original artwork by Portuguese illustrator Pedro Simões (Simões 2020). In the future, we would like to further modify and expand on Logan Franken’s code to create a library for p5.js so that the creative coding community could explore the form further.</p>
+
+<h2>Concluding remarks</h2>
+<p>It has been a fantastic ride getting to know Barros’ book-game, and we hope you feel as enticed as we did with these five centuries-old materials. We’ve learned a whole bunch about Aristotle’s Nicomachean Ethics, and we have learned to analyse real- world situations through the concepts of virtues and vices as well as concepts such as ‘bending the crooked stick to reach the mean’ — another central concept we plan to work on in the future. Each of our practice-based approaches has created knowledge about Barros’ book/game that helps us in steering our practice-based process further in the near future.</p>
+<p>We hope that you’ve enjoyed exploring our work-in-process. Please visit <a href="https:// historicaltype.eu/hacking">https:// historicaltype.eu/hacking</a> to keep up to date with our work and see where the project is currently at.</p>
+
+<h2>References</h2>
+
+  <p>Crupi, G. (2019). Volvelles of knowledge: Origin and Development of an instrument of scientific imagination (13th-17th centuries). <em>JLIS.It</em>, 10(2), 1-27. <a target="_blank" href="https://doi.org/10.4403/jlis.it-12534">https://doi.org/10.4403/jlis.it-12534</a></p>
+
+<p>Simões, P. (2020) Diagramas circulares de arte combinatoria. Artist portfolio on behance.net. <a target="_blank"  href="https://www.behance.net/gallery/143486181/Diagramas-circulares-de-arte-combinatoria">https://www.behance.net/gallery/143486181/Diagramas-circulares-de-arte-combinatoria</a></p>
+
+</div>
+</body>
+</html>
