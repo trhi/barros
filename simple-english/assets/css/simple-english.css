@@ -43,6 +43,15 @@
 
 @media screen and (max-width: 992px) {
 
+  #tree-div{
+    width: 100vh;
+    position: relative;
+  }
+
+  #book{
+    width: 100vw;
+  }
+
   .sentences{
     left: 0px;
     width: 100vw;
