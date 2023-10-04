@@ -12,6 +12,7 @@ body
 
 #puzzle-canvas-wrapper
 {
+  cursor: pointer;
   height: 1000px;
   margin: 70px auto 0 auto;
   width: 2000px;

@@ -1,14 +1,7 @@
 //this is the code for the simplified p5.js version
 //this code is adapted from code written by Logan Franken ("html5 circle puzzle")
+//Franken's code is available here: https://github.com/loganfranken/Circle-Puzzle
 //Franken's code was "translated" into p5.js for questions of accessibility
-// - allows for displaying one volvelle at a time
-// - allows users to upload their own volvelle,
-// (in which case it replaces whatever was seen previously on the screen (canvas) )
-// - scales whatever image is given to it to 800px x 800px
-// - TODO: allow users to tweak the volvelle percentages!! (even if it is a
-// very rudimentary interface)
-// - TODO: add example images that users can "upload" on the p5 online editor
-// - TODO: cat sized letters to say that your volvelle is not saved on the site!
 
 let volvelleImg = [ "assets/img/TABall-low-1.png", [1, 0.58, 0.47] ];
 let canvas;
@@ -20,7 +13,9 @@ function setup(){};
 
 //we are not using the p5.js native draw() loop at all for the volvelles,
 //instead, they are redrawn only when the user drags them:
-function draw(){};
+function draw(){
+	cursor('pointer');
+};
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //
