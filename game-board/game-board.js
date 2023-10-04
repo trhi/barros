@@ -12,7 +12,7 @@ function setup() {
   center = createVector(520, 520);
 
   //let stopRotating = createButton("⏯️"); //  ⏯️   ⟳
-  let toggleRotation = createImg("assets/img/autoplay-true.jpg");
+  let toggleRotation = createImg("assets/img/autoplay-true-deeppink.jpg");
   toggleRotation.id("rotatebutton");
   toggleRotation.mousePressed( toggleRotating );
 }
