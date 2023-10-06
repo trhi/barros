@@ -33,15 +33,27 @@ The code was adapted to:
 <div style="max-width: 900px;">
 	<p style="text-align: center">⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
 	<p>Drag the volvelles to rotate them below,
-		or upload your own image to rotate your own digital volvelle.</p>
-<p>Tweak, copy and modify this code at:
-		<br><a target="_blank" style="color:white" href="https://editor.p5js.org/terhi/sketches/Ps48-Vn0k">https://editor.p5js.org/terhi/sketches/Ps48-Vn0k</a></p>
-		<p style="text-align: center">⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
+		or upload your own image to rotate your own digital volvelle. Click on the
+	icons below to see these images rotate as digital volvelles.</p>
+	<div style="text-align: center">
+	<img onclick="createRotatingVolvelle(terhi)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="assets/img/terhi.png"></img>
+	<img onclick="createRotatingVolvelle(christine)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="assets/img/christine.jpg"></img>
+	<img onclick="createRotatingVolvelle(nightlyTest)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="assets/img/terhi-test.png"></img>
+	<img onclick="createRotatingVolvelle(volvelleImg)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="assets/img/TABall-low-1.png"></img>
+	</div>
+
 	<p id="uploadButtonInfo">Upload your own volvelle (square image, centered):
 		<input type="file" id="uploadButton" name="userVolvelle" accept="image/png, image/jpeg"></p>
 </div>
 <div id="puzzle-canvas-wrapper">
 	</div>
+
+<p style="text-align: center">⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
+	<p>Tweak, copy and modify this code at:
+			<br><a target="_blank" style="color:white" href="https://editor.p5js.org/terhi/sketches/Ps48-Vn0k">https://editor.p5js.org/terhi/sketches/Ps48-Vn0k</a></p>
+			<p style="text-align: center">⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
+
+
 	<script language="javascript" type="text/javascript" src="assets/lib/p5.min.js"></script>
 	<script language="javascript" type="text/javascript" src="assets/script/volvelle-image.js"></script>
 </body>

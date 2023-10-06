@@ -4,12 +4,28 @@
 //Franken's code was "translated" into p5.js for questions of accessibility
 
 let volvelleImg = [ "assets/img/TABall-low-1.png", [1, 0.58, 0.47] ];
+let terhi = [ 'assets/img/terhi.png', [1, 0.75, 0.5, 0.23] ];
+let christine = [ 'assets/img/christine.jpg', [1, 0.72, 0.5] ];
+let nightlyTest = [ 'assets/img/terhi-test.png', [1, 0.75, 0.5, 0.23] ];
 let canvas;
 let userVolvelleArray = [1, 0.75, 0.5, 0.23];
 let puzzleDiv = document.getElementById("puzzle-canvas-wrapper");
 
 //add this in order to make it valid p5.js, but we are not using it in this sketch:
-function setup(){};
+function setup(){
+
+	canvas = createCanvas(800,800);
+	canvas.parent(puzzleDiv);
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+	//
+	// 		Launch the Puzzle when the DOM is ready
+	// 		for now, only display barros:
+	//
+	//
+	window.addEventListener('load', createRotatingVolvelle (volvelleImg), false);
+
+};
 
 //we are not using the p5.js native draw() loop at all for the volvelles,
 //instead, they are redrawn only when the user drags them:
@@ -17,24 +33,21 @@ function draw(){
 	cursor('pointer');
 };
 
-//////////////////////////////////////////////////////////////////////////////////////////
-//
-// 		Launch the Puzzle when the DOM is ready
-// 		for now, only display barros:
-//
-//
-window.addEventListener('load', function () {
-		let volvellePercentages = volvelleImg[1];
-		let array = volvelleImg[1];
-		let volvelleImage = new Image();
-		volvelleImage.src = volvelleImg[0];
-		volvelleImage.onload = function() {
-			canvas = createCanvas(800,800);
-			canvas.parent(puzzleDiv);
-			//let puzzle = new PUZZLE.PuzzleController(canvas, volvelleImage, array);
-			let theVolvelle = new volvelle(canvas, volvelleImage, volvellePercentages);
+
+
+function createRotatingVolvelle(img){
+
+	console.log("img is:", img);
+	let volvellePercentages = img[1];
+	let array = img[1];
+	let volvelleImage = new Image();
+	volvelleImage.src = img[0];
+	volvelleImage.onload = function() {
+		//let puzzle = new PUZZLE.PuzzleController(canvas, volvelleImage, array);
+		let theVolvelle = new volvelle(canvas, volvelleImage, volvellePercentages);
 	}
-}, false);
+}
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //
