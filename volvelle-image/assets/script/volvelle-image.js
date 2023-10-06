@@ -3,7 +3,7 @@
 //Franken's code is available here: https://github.com/loganfranken/Circle-Puzzle
 //Franken's code was "translated" into p5.js for questions of accessibility
 
-let volvelleImg = [ "assets/img/TABall-low-1.png", [1, 0.58, 0.47] ];
+let barros = [ "assets/img/TABall-low-1.png", [1, 0.58, 0.47] ];
 let terhi = [ 'assets/img/terhi.png', [1, 0.75, 0.5, 0.23] ];
 let christine = [ 'assets/img/christine.jpg', [1, 0.72, 0.5] ];
 let nightlyTest = [ 'assets/img/terhi-test.png', [1, 0.75, 0.5, 0.23] ];
@@ -23,7 +23,7 @@ function setup(){
 	// 		for now, only display barros:
 	//
 	//
-	window.addEventListener('load', createRotatingVolvelle (volvelleImg), false);
+	window.addEventListener('load', createRotatingVolvelle (barros), false);
 
 };
 
