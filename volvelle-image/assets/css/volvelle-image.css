@@ -15,7 +15,7 @@ body
   cursor: pointer;
   height: 800px;
   margin: 0 auto 0 auto;
-  width: 1000px;
+  width: 800px;
   margin-left: 200px;
 }
 
@@ -58,6 +58,10 @@ p{
     font-size: 60px;
   }
 
+  #otherVolvelles{
+    font-size: 60px;
+  }
+
   #uploadButton{
     width: 700px;
     height: 130px;
@@ -77,7 +81,7 @@ p{
   #puzzle-canvas-wrapper
   {
     margin: 0 auto 0 auto;
-    width: 700px;
+    width: 800px;
     margin-left: 0px;
   }
 
