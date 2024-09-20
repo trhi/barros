@@ -13,9 +13,9 @@ body
 #puzzle-canvas-wrapper
 {
   cursor: pointer;
-  height: 1000px;
-  margin: 70px auto 0 auto;
-  width: 2000px;
+  height: 800px;
+  margin: 0 auto 0 auto;
+  width: 1000px;
   margin-left: 200px;
 }
 
@@ -76,8 +76,8 @@ p{
 
   #puzzle-canvas-wrapper
   {
-    margin: 70px auto 0 auto;
-    width: 1000px;
+    margin: 0 auto 0 auto;
+    width: 700px;
     margin-left: 0px;
   }
 
