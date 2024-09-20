@@ -49,13 +49,9 @@ p{
 
 @media screen and (max-width: 992px){
 
-  body{
-    overflow-y: hidden;
-  }
-
   p{
     margin-left: 20px;
-    font-size: 50px;
+    font-size: 36px;
   }
 
   #uploadButtonInfo{
@@ -64,7 +60,7 @@ p{
 
   #uploadButton{
     width: 700px;
-    height: 30px;
+    height: 130px;
     font-size: 50px;
   }
 
