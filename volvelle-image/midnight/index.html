@@ -1,0 +1,66 @@
+<!-- MIDNIGHT -->
+
+<!--
+
+This code is mostly code written by Logan Franken. Franken posted this project
+on their blog/site on July 25th 2011. Quote from Franken's README:
+
+"
+Circle-Puzzle
+=============
+HTML5 rotating concentric circle puzzle created with the HTML5 canvas element
+https://github.com/loganfranken/Circle-Puzzle
+http://www.loganfranken.com/blog/22/html5-circle-puzzle/
+"
+
+The code was adapted to:
+- use p5.js
+- change variable names: puzzle -> volvelle
+- reorganise code
+- allow the user to upload their own image to create a volvelle
+- allow user to set the percentages at which the volvelles are cut at
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		img{margin-bottom: 30px;}
+	</style>
+	<meta charset="UTF-8">
+	<title>midnight rotating tree</title>
+  <link rel="stylesheet" type="text/css" href="../assets/css/volvelle-image.css">
+	<link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+
+</head>
+<body>
+<div style="max-width: 1000px;">
+	<p style="text-align: center">⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
+	<p>Click on the icons below to see the volvelle. Click and drag the volvelles to rotate. 
+        Upload your own <a target="_blank" href="../index.html" style="color:white">here</a>.
+    </p>
+	<div style="text-align: center">
+		<img onclick="createRotatingVolvelle(pedro1)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="img/pedro-1.jpg"></img>
+		<img onclick="createRotatingVolvelle(sofia2)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="img/sofia-2.jpg"></img>
+		<img onclick="createRotatingVolvelle(x1)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="img/x-1.jpg"></img>
+		<img onclick="createRotatingVolvelle(michel2)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="img/michel-2.jpg"></img>
+		<img onclick="createRotatingVolvelle(manuel1)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="img/manuel-1.jpg"></img>
+		<img onclick="createRotatingVolvelle(terhi1)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="img/terhi-1.jpg"></img>
+		<img onclick="createRotatingVolvelle(blank1)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="img/blank-1.jpg"></img>
+		<img onclick="createRotatingVolvelle(sofia1)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="img/sofia-1.jpg"></img>
+		<img onclick="createRotatingVolvelle(celeste1)" style="cursor: pointer; width: 150px; margin-right: 30px; border-radius: 50%" src="img/celeste-1.jpg"></img>
+	</div>
+
+    <div id="puzzle-canvas-wrapper"></div>
+	</div>
+
+<p style="text-align: center">⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
+	<p>Tweak, copy and modify this code at:
+			<br><a target="_blank" style="color:white" href="https://editor.p5js.org/terhi/sketches/Ps48-Vn0k">https://editor.p5js.org/terhi/sketches/Ps48-Vn0k</a></p>
+			<p style="text-align: center">⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳⟳</p>
+
+	<script language="javascript" type="text/javascript" src="../assets/lib/p5.min.js"></script>
+	<script language="javascript" type="text/javascript" src="volvelle-image.js"></script>
+</body>
+</html>
